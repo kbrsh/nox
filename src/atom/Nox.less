@@ -1,0 +1,343 @@
+// Nox
+@base16-color-base00: #141b1f;
+@base16-color-base01: #29363d;
+@base16-color-base02: #3d525c;
+@base16-color-base03: #526d7a;
+@base16-color-base04: #668899;
+@base16-color-base05: #85a0ad;
+@base16-color-base06: #a3b8c2;
+@base16-color-base07: #c2cfd6;
+@base16-color-base08: #d27979;
+@base16-color-base09: #d28879;
+@base16-color-base0A: #d2b579;
+@base16-color-base0B: #9dc18b;
+@base16-color-base0C: #67cfe4;
+@base16-color-base0D: #67bbe4;
+@base16-color-base0E: #8879d2;
+@base16-color-base0F: #d279c3;
+
+// General
+@syntax-text-color: @base16-color-base05;
+@syntax-cursor-color: @base16-color-base05;
+@syntax-selection-color: @base16-color-base02;
+@syntax-background-color: @base16-color-base00;
+
+// Guide
+@syntax-wrap-guide-color: @base16-color-base01;
+@syntax-indent-guide-color: @base16-color-base01;
+@syntax-invisible-character-color: @base16-color-base01;
+
+// Find and replace
+@syntax-result-marker-color: @base16-color-base03;
+@syntax-result-marker-color-selected: @base16-color-base05;
+
+// Gutter
+@syntax-gutter-text-color: @base16-color-base05;
+@syntax-gutter-text-color-selected: @base16-color-base05;
+@syntax-gutter-background-color: @base16-color-base00;
+@syntax-gutter-background-color-selected: fade(@base16-color-base03, 33%);
+
+// Git diff
+@syntax-color-added: @base16-color-base0B;
+@syntax-color-modified: @base16-color-base09;
+@syntax-color-removed: @base16-color-base08;
+@syntax-color-renamed: @base16-color-base0D;
+
+// Editor
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .cursor {
+    border-color: @syntax-cursor-color;
+    border-width: 2px;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .search-results .region {
+    .syntax--marker {
+      background-color: transparent;
+      border: @syntax-result-marker-color;
+    }
+
+    .syntax--marker.current-result {
+      border: @syntax-result-marker-color-selected;
+    }
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+}
+
+// Language
+.syntax--comment {
+  color: @base16-color-base03;
+}
+
+.syntax--constant {
+  color: @base16-color-base09;
+
+  &.syntax--character {
+    &.syntax--escape {
+      color: @base16-color-base0C;
+    }
+  }
+
+  &.syntax--numeric {
+    color: @base16-color-base09;
+  }
+
+  &.syntax--other {
+    &.syntax--color {
+      color: @base16-color-base0C;
+    }
+
+    &.syntax--symbol {
+      color: @base16-color-base0B;
+    }
+  }
+}
+
+.syntax--entity {
+  &.syntax--name {
+    &.syntax--class {
+      color: @base16-color-base0A;
+    }
+
+    &.syntax--function {
+      color: @base16-color-base0D;
+    }
+
+    &.syntax--section {
+      color: @base16-color-base0D;
+    }
+
+    &.syntax--tag {
+      color: @base16-color-base08;
+    }
+
+    &.syntax--type {
+      &.syntax--class {
+        color: @base16-color-base0A;
+      }
+    }
+  }
+
+  &.syntax--other {
+    &.syntax--attribute-name {
+      color: @base16-color-base09;
+
+      &.syntax--id {
+        color: @base16-color-base0D;
+      }
+    }
+
+    &.syntax--inherited-class {
+      color: @base16-color-base0B;
+    }
+  }
+}
+
+.syntax--invalid.syntax--illegal {
+  color: @base16-color-base00;
+  background-color: @base16-color-base08;
+}
+
+.syntax--keyword {
+  color: @base16-color-base0E;
+
+  &.syntax--operator {
+    color: @base16-color-base05;
+  }
+
+  &.syntax--other {
+    &.syntax--special-method {
+      color: @base16-color-base0D;
+    }
+
+    &.syntax--unit {
+      color: @base16-color-base09;
+    }
+  }
+}
+
+.syntax--markup {
+  &.syntax--bold {
+    font-weight: bold;
+    color: @base16-color-base0A;
+  }
+
+  &.syntax--changed {
+    color: @base16-color-base0E;
+  }
+
+  &.syntax--deleted {
+    color: @base16-color-base08;
+  }
+
+  &.syntax--heading {
+    color: @base16-color-base0D;
+  }
+
+  &.syntax--inserted {
+    color: @base16-color-base0B;
+  }
+
+  &.syntax--italic {
+    font-style: italic;
+    color: @base16-color-base0E;
+  }
+
+  &.syntax--list {
+    color: @base16-color-base08;
+  }
+
+  &.syntax--quote {
+    color: @base16-color-base09;
+  }
+
+  &.syntax--raw {
+    &.syntax--inline {
+      color: @base16-color-base0B;
+    }
+  }
+}
+
+.syntax--meta {
+  &.syntax--class {
+    color: @base16-color-base07;
+  }
+
+  &.syntax--link {
+    color: @base16-color-base09;
+  }
+
+  &.syntax--require {
+    color: @base16-color-base0D;
+  }
+
+  &.syntax--selector {
+    color: @base16-color-base0E;
+  }
+
+  &.syntax--separator {
+    color: @base16-color-base05;
+    background-color: @base16-color-base02;
+  }
+}
+
+.syntax--none {
+  color: @base16-color-base05;
+}
+
+.syntax--punctuation {
+  &.syntax--definition {
+    &.syntax--array,
+    &.syntax--parameters,
+    &.syntax--variable {
+      color: @base16-color-base05;
+    }
+
+    &.syntax--bold {
+      font-weight: bold;
+      color: @base16-color-base0A;
+    }
+
+    &.syntax--comment {
+      color: @base16-color-base03;
+    }
+
+    &.syntax--entity {
+      color: @base16-color-base0D;
+    }
+
+    &.syntax--italic {
+      font-style: italic;
+      color: @base16-color-base0E;
+    }
+  }
+
+  &.syntax--section {
+    &.syntax--embedded {
+      color: @base16-color-base0F;
+    }
+  }
+}
+
+.syntax--storage {
+  color: @base16-color-base0E;
+}
+
+.syntax--string {
+  color: @base16-color-base0B;
+
+  &.syntax--other {
+    &.syntax--link {
+      color: @base16-color-base08;
+    }
+  }
+
+  &.syntax--regexp {
+    color: @base16-color-base0C;
+  }
+}
+
+.syntax--support {
+  &.syntax--class {
+    color: @base16-color-base0A;
+  }
+
+  &.syntax--type:not(.syntax--css) {
+    color: @base16-color-base0C;
+  }
+
+  &.syntax--function {
+    color: @base16-color-base0C;
+
+    &.syntax--any-method {
+      color: @base16-color-base0D;
+    }
+  }
+}
+
+.syntax--variable {
+  color: @base16-color-base08;
+
+  &.syntax--interpolation {
+    color: @base16-color-base0F;
+  }
+
+  &.syntax--parameter {
+    &.syntax--function {
+      color: @base16-color-base05;
+    }
+  }
+}
