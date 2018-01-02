@@ -30,14 +30,14 @@ Nox has a minimal oh-my-zsh theme that displays the current working directory an
   * `#a3b8c2`
   * `#c2cfd6`
 * Accents
-  * Red - `#d27979`
-  * Orange - `#d28879`
-  * Yellow - `#d2b579`
-  * Green - `#9dc18b`
-  * Cyan - `#67cfe4`
-  * Blue - `#67bbe4`
-  * Purple - `#8879d2`
-  * Magenta - `#d279c3`
+  * Red - `#ec7979`
+  * Orange - `#e4a281`
+  * Yellow - `#e4c381`
+  * Green - `#a7d590`
+  * Cyan - `#81d4e4`
+  * Blue - `#79b2ec`
+  * Purple - `#c381e4`
+  * Magenta - `#d590c9`
 
 ### License
 
