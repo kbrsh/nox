@@ -10,9 +10,9 @@ set wildmenu " Enable wild menu
 " Plugins
 let g:airline_theme='Nox'
 
-call plug#begin('~/.config/nvim/plugged')
-Plug 'kbrsh/Nox', {'rtp': 'src/vim/Nox/'} " Nox
-Plug 'bling/vim-airline' " Airline
+call plug#begin('~/.config/nvim/plug')
+Plug 'kbrsh/nox', {'rtp': 'src/vim/Nox/'} " Nox
+Plug 'vim-airline/vim-airline' " Airline
 Plug 'scrooloose/nerdtree' " Tree
 call plug#end()
 
