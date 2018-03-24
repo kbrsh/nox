@@ -8,15 +8,15 @@ Beautiful dark-themed color scheme.
 
 ##### Atom
 
-Nox has an Atom syntax theme. To add it, download the `src/atom/Nox.less` file and link it as a syntax theme.
+Nox has an Atom syntax theme. To use it, download the `src/atom/Nox.less` file and link it as a syntax theme.
 
 ##### iTerm
 
-Nox has an iTerm color scheme. To add it, download the `src/iterm/Nox.itermcolors` file and add it as a color preset in iTerm.
+Nox has an iTerm color scheme. To use it, download the `src/iterm/Nox.itermcolors` file and add it as a color preset in iTerm.
 
 ##### ZSH (oh-my-zsh)
 
-Nox has an oh-my-zsh theme that displays the current working directory and git status (if in a working git directory). To add it, download the `src/zsh/Nox.zsh-theme` file to the oh-my-zsh themes directory (`~/.oh-my-zsh/themes`). After that, set `ZSH_THEME` to `"Nox"` in your `.zshrc` file.
+Nox has an oh-my-zsh theme that displays the current working directory and git status (if in a working git directory). To use it, download the `src/zsh/Nox.zsh-theme` file to the oh-my-zsh themes directory (`~/.oh-my-zsh/themes`). After that, set `ZSH_THEME` to `"Nox"` in your `.zshrc` file.
 
 ### Colors
 
