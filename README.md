@@ -16,7 +16,7 @@ Nox has an iTerm color scheme. To use it, download the `src/iterm/Nox.itermcolor
 
 ##### ZSH (oh-my-zsh)
 
-Nox has an oh-my-zsh theme that displays the current working directory and git status. To use it, download the `src/zsh/Nox.zsh-theme` file to the oh-my-zsh themes directory (`~/.oh-my-zsh/themes`). After that, set `ZSH_THEME` to `"Nox"` in your `.zshrc` file.
+Nox has an oh-my-zsh theme that displays the current working directory and git status in the terminal. To use it, download the `src/zsh/Nox.zsh-theme` file to the oh-my-zsh themes directory (`~/.oh-my-zsh/themes`). After that, set `ZSH_THEME` to `"Nox"` in your `.zshrc` file.
 
 ### Colors
 
