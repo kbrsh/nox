@@ -1,20 +1,20 @@
 // Nox
-@base16-color-base00: #141b1f;
-@base16-color-base01: #29363d;
-@base16-color-base02: #3d525c;
-@base16-color-base03: #526d7a;
-@base16-color-base04: #668899;
-@base16-color-base05: #85a0ad;
-@base16-color-base06: #a3b8c2;
-@base16-color-base07: #c2cfd6;
-@base16-color-base08: #ec7979;
-@base16-color-base09: #e4a281;
-@base16-color-base0A: #e4c381;
-@base16-color-base0B: #a7d590;
-@base16-color-base0C: #81d4e4;
-@base16-color-base0D: #79b2ec;
-@base16-color-base0E: #c381e4;
-@base16-color-base0F: #d590c9;
+@base16-color-base00: #1f292e;
+@base16-color-base01: #33444d;
+@base16-color-base02: #475f6b;
+@base16-color-base03: #5c7a8a;
+@base16-color-base04: #7594a3;
+@base16-color-base05: #94acb8;
+@base16-color-base06: #b3c3cc;
+@base16-color-base07: #d1dbe0;
+@base16-color-base08: #ec9393;
+@base16-color-base09: #ecb093;
+@base16-color-base0A: #ecce93;
+@base16-color-base0B: #b5df9f;
+@base16-color-base0C: #8cf2ea;
+@base16-color-base0D: #8cd0f2;
+@base16-color-base0E: #cc99e6;
+@base16-color-base0F: #df9fd4;
 
 // General
 @syntax-text-color: @base16-color-base05;
@@ -97,7 +97,7 @@ atom-text-editor {
   }
 }
 
-// Syntax
+// Language
 .syntax--comment {
   color: @base16-color-base03;
 }
@@ -174,10 +174,6 @@ atom-text-editor {
 .syntax--keyword {
   color: @base16-color-base0E;
 
-  &.syntax--operator {
-    color: @base16-color-base05;
-  }
-
   &.syntax--other {
     &.syntax--special-method {
       color: @base16-color-base0D;
@@ -186,6 +182,14 @@ atom-text-editor {
     &.syntax--unit {
       color: @base16-color-base09;
     }
+  }
+}
+
+.syntax--operator {
+  color: @base16-color-base0C;
+
+  &.syntax--typeof {
+    color: @base16-color-base0E;
   }
 }
 
