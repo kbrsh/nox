@@ -28,6 +28,7 @@ endfunction
 call s:h("Cursor", s:black, s:black)
 call s:h("iCursor", s:white, s:white)
 call s:h("LineNr", s:gray, s:black)
+call s:h("Visual", s:black, s:white) 
 
 call s:h("Normal", s:white, s:black)
 call s:h("Identifier", s:white, s:black)
