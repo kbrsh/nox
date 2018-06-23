@@ -5,18 +5,15 @@ set number " Line numbers
 
 " Status Line
 
-let g:NoxModeName = {'n': 'NOR', 'v': 'VIS', 'i': 'INS', 'c': 'COM'}
-
 function! NoxStatusCurrentMode() abort
-    let l:NoxCurrentMode = mode()
-    return get(g:NoxModeName, l:NoxCurrentMode, 'O')
+    return toupper(mode())
 endfunction
 
 set laststatus=2
 set statusline=%1*user
 set statusline+=\ %{strftime('%H:%M\ %m/%d/%y')}
 set statusline+=\ %{NoxStatusCurrentMode()}
-set statusline+=%2*\ %t\ @\ %f
+set statusline+=%2*\ %t
 set statusline+=%=
 set statusline+=%1*%y
 set statusline+=\ %l:%L
