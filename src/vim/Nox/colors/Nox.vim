@@ -27,7 +27,14 @@ endfunction
 
 call s:h("Cursor", s:black, s:black)
 call s:h("iCursor", s:white, s:white)
+call s:h("IncSearch", s:black, s:yellow)
 call s:h("LineNr", s:gray, s:black)
+call s:h("Pmenu", s:black, s:gray) 
+call s:h("PmenuSel", s:black, s:white) 
+call s:h("PmenuSbar", s:black, s:black) 
+call s:h("PmenuThumb", s:white, s:white) 
+call s:h("Substitute", s:black, s:yellow)
+call s:h("Search", s:black, s:yellow)
 call s:h("Visual", s:black, s:white) 
 
 call s:h("Normal", s:white, s:black)
