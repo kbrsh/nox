@@ -25,3 +25,4 @@ hi User2 guifg=#7594a3 guibg=#33444d
 " Key Maps
 
 imap jk <Esc>
+nnoremap <CR> :noh<CR><CR>
