@@ -2,6 +2,7 @@
 
 set autoread " Auto-reload changed files
 set number " Line numbers
+set inccommand=nosplit " Incrementally show command results
 
 " Status Line
 
