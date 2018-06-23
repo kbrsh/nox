@@ -116,9 +116,9 @@ call s:h("Number", s:orange, "", "")
 call s:h("Boolean", s:orange, "", "")
 call s:h("Float", s:orange, "", "")
 
-call s:h("Identifier", s:white, "", "")
+call s:h("Identifier", s:purple, "", "")
 call s:h("Function", s:purple, "", "")
-call s:h("Statement", s:white, "", "")
+call s:h("Statement", s:purple, "", "")
 
 call s:h("Conditional", s:purple, "", "")
 call s:h("Repeat", s:purple, "", "")
