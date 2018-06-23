@@ -4,167 +4,76 @@ if has('termguicolors')
   set termguicolors
 endif
 
+syntax clear
 set background=dark
-syntax reset
 
 let g:colors_name="Nox"
 
-let s:red = {'gui': '#ec9393', 'cterm': 210}
-let s:orange = {'gui': '#ecb093', 'cterm': 180}
-let s:yellow = {'gui': '#ecce93', 'cterm': 186}
-let s:green = {'gui': '#b5df9f', 'cterm': 150}
-let s:cyan = {'gui': '#8cf2ea', 'cterm': 116}
-let s:blue = {'gui': '#8cd0f2', 'cterm': 111}
-let s:purple = {'gui': '#cc99e6', 'cterm': 176}
-let s:white = {'gui': '#7594a3', 'cterm': 109}
+let s:red = {'gui': '#cd9898', 'cterm': 210}
+let s:orange = {'gui': '#cdaa98', 'cterm': 180}
+let s:yellow = {'gui': '#cdbb98', 'cterm': 186}
+let s:green = {'gui': '#aacd98', 'cterm': 150}
+let s:cyan = {'gui': '#98cdc9', 'cterm': 116}
+let s:blue = {'gui': '#90bed5', 'cterm': 111}
+let s:purple = {'gui': '#bb98cd', 'cterm': 176}
+let s:white = {'gui': '#b3c3cc', 'cterm': 109}
+let s:lightgray = {'gui': '#7594a3', 'cterm': 109}
+let s:gray = {'gui': '#5c7a8a', 'cterm': 109}
 let s:black = {'gui': '#1f292e', 'cterm': 16}
 
-let s:fg = s:white
-let s:bg = s:black
+function! s:h(type, fg, bg)
+  exec "hi " . a:type . " cterm=NONE ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=NONE guibg=" . a:bg.gui . " guifg=" . a:fg.gui
+endfunction
 
-let s:comment_fg  = {"gui": "#5c7a8a"}
-let s:gutter_bg   = {"gui": "#1f292e"}
-let s:gutter_fg   = {"gui": "#5c7a8a"}
+call s:h("Cursor", s:black, s:black)
+call s:h("iCursor", s:white, s:white)
+call s:h("LineNr", s:gray, s:black)
 
-let s:cursor_line = {"gui": "#7594a3"}
-let s:color_col   = {"gui": "#7594a3"}
+call s:h("Normal", s:white, s:black)
+call s:h("Identifier", s:white, s:black)
+call s:h("Function", s:blue, s:black)
 
-let s:selection   = {"gui": "#33444d"}
-let s:vertsplit   = {"gui": "#33444d"}
+call s:h("Comment", s:gray, s:black)
 
+call s:h("Constant", s:orange, s:black)
+call s:h("String", s:green, s:black)
+call s:h("Character", s:green, s:black)
+call s:h("Number", s:orange, s:black)
+call s:h("Boolean", s:orange, s:black)
+call s:h("Float", s:orange, s:black)
 
-function! s:h(group, fg, bg, attr)
-  if type(a:fg) == type({})
-    exec "hi " . a:group . " guifg=" . a:fg.gui
-  else
-    exec "hi " . a:group . " guifg=NONE"
-  endif
-  if type(a:bg) == type({})
-    exec "hi " . a:group . " guibg=" . a:bg.gui
-  else
-    exec "hi " . a:group . " guibg=NONE"
-  endif
-  if a:attr != ""
-    exec "hi " . a:group . " gui=" . a:attr
-  else
-    exec "hi " . a:group . " gui=NONE"
-  endif
-endfun
+call s:h("Statement", s:purple, s:black)
+call s:h("Conditional", s:purple, s:black)
+call s:h("Repeat", s:purple, s:black)
+call s:h("Label", s:purple, s:black)
+call s:h("Operator", s:white, s:black)
+call s:h("Keyword", s:purple, s:black)
+call s:h("Exception", s:purple, s:black)
+call s:h("PreProc", s:purple, s:black)
+call s:h("Include", s:purple, s:black)
+call s:h("Define", s:purple, s:black)
+call s:h("Macro", s:purple, s:black)
+call s:h("PreCondit", s:purple, s:black)
 
+call s:h("Type", s:yellow, s:black)
+call s:h("StorageClass", s:purple, s:black)
+call s:h("Structure", s:yellow, s:black)
+call s:h("Typedef", s:yellow, s:black)
 
-call s:h("Normal", s:fg, s:bg, "")
-call s:h("NonText", s:fg, "", "")
+call s:h("Special", s:red, s:black)
+call s:h("SpecialChar", s:red, s:black)
+call s:h("Tag", s:red, s:black)
+call s:h("Delimiter", s:red, s:black)
+call s:h("SpecialComment", s:red, s:black)
+call s:h("Debug", s:red, s:black)
 
-call s:h("Cursor", s:bg, s:blue, "")
-call s:h("CursorColumn", "", s:cursor_line, "")
-call s:h("CursorLine", "", s:cursor_line, "")
+call s:h("Underlined", s:blue, s:black)
+call s:h("Error", s:white, s:red)
+call s:h("Todo", s:white, s:yellow)
 
-call s:h("LineNr", s:gutter_fg, s:gutter_bg, "")
-call s:h("CursorLineNr", s:fg, "", "")
-
-call s:h("DiffAdd", s:green, "", "")
-call s:h("DiffChange", s:yellow, "", "")
-call s:h("DiffDelete", s:red, "", "")
-call s:h("DiffText", s:blue, "", "")
-
-call s:h("IncSearch", s:bg, s:yellow, "")
-call s:h("Search", s:bg, s:yellow, "")
-
-call s:h("ErrorMsg", s:fg, "", "")
-call s:h("ModeMsg", s:fg, "", "")
-call s:h("MoreMsg", s:fg, "", "")
-call s:h("WarningMsg", s:red, "", "")
-call s:h("Question", s:purple, "", "")
-
-call s:h("Pmenu", s:bg, s:fg, "")
-call s:h("PmenuSel", s:fg, s:blue, "")
-call s:h("PmenuSbar", "", s:selection, "")
-call s:h("PmenuThumb", "", s:fg, "")
-
-call s:h("SpellBad", s:red, "", "")
-call s:h("SpellCap", s:yellow, "", "")
-call s:h("SpellLocal", s:yellow, "", "")
-call s:h("SpellRare", s:yellow, "", "")
-
-call s:h("StatusLine", s:blue, s:cursor_line, "")
-call s:h("StatusLineNC", s:comment_fg, s:cursor_line, "")
-call s:h("TabLine", s:comment_fg, s:cursor_line, "")
-call s:h("TabLineFill", s:comment_fg, s:cursor_line, "")
-call s:h("TabLineSel", s:fg, s:bg, "")
-
-call s:h("Visual", "", s:selection, "")
-call s:h("VisualNOS", "", s:selection, "")
-
-call s:h("ColorColumn", "", s:color_col, "")
-call s:h("Conceal", s:fg, "", "")
-call s:h("Directory", s:blue, "", "")
-call s:h("VertSplit", s:vertsplit, s:vertsplit, "")
-call s:h("Folded", s:fg, "", "")
-call s:h("FoldColumn", s:fg, "", "")
-call s:h("SignColumn", s:fg, "", "")
-
-call s:h("MatchParen", s:white, "", "underline")
-call s:h("SpecialKey", s:fg, "", "")
-call s:h("Title", s:black, "", "")
-call s:h("WildMenu", s:fg, "", "")
-
-call s:h("Comment", s:comment_fg, "", "")
-call s:h("Constant", s:orange, "", "")
-call s:h("String", s:green, "", "")
-call s:h("Character", s:green, "", "")
-call s:h("Number", s:orange, "", "")
-call s:h("Boolean", s:orange, "", "")
-call s:h("Float", s:orange, "", "")
-
-call s:h("Identifier", s:purple, "", "")
-call s:h("Function", s:purple, "", "")
-call s:h("Statement", s:purple, "", "")
-
-call s:h("Conditional", s:purple, "", "")
-call s:h("Repeat", s:purple, "", "")
-call s:h("Label", s:white, "", "")
-call s:h("Operator", s:fg, "", "")
-call s:h("Keyword", s:purple, "", "")
-call s:h("Exception", s:purple, "", "")
-
-call s:h("PreProc", s:purple, "", "")
-call s:h("Include", s:purple, "", "")
-call s:h("Define", s:purple, "", "")
-call s:h("Macro", s:purple, "", "")
-call s:h("PreCondit", s:purple, "", "")
-
-call s:h("Type", s:purple, "", "")
-call s:h("StorageClass", s:purple, "", "")
-call s:h("Structure", s:purple, "", "")
-call s:h("Typedef", s:purple, "", "")
-
-call s:h("Special", s:blue, "", "")
-call s:h("SpecialChar", s:fg, "", "")
-call s:h("Tag", s:fg, "", "")
-call s:h("Delimiter", s:fg, "", "")
-call s:h("SpecialComment", s:fg, "", "")
-call s:h("Debug", s:fg, "", "")
-call s:h("Underlined", s:fg, "", "")
-call s:h("Ignore", s:fg, "", "")
-call s:h("Error", s:red, s:gutter_bg, "")
-call s:h("Todo", s:purple, "", "")
-
-call s:h("gitcommitComment", s:comment_fg, "", "")
-call s:h("gitcommitUnmerged", s:red, "", "")
-call s:h("gitcommitOnBranch", s:fg, "", "")
-call s:h("gitcommitBranch", s:purple, "", "")
-call s:h("gitcommitDiscardedType", s:red, "", "")
-call s:h("gitcommitSelectedType", s:green, "", "")
-call s:h("gitcommitHeader", s:fg, "", "")
-call s:h("gitcommitUntrackedFile", s:cyan, "", "")
-call s:h("gitcommitDiscardedFile", s:red, "", "")
-call s:h("gitcommitSelectedFile", s:green, "", "")
-call s:h("gitcommitUnmergedFile", s:yellow, "", "")
-call s:h("gitcommitFile", s:fg, "", "")
-hi link gitcommitNoBranch gitcommitBranch
-hi link gitcommitUntracked gitcommitComment
-hi link gitcommitDiscarded gitcommitComment
-hi link gitcommitSelected gitcommitComment
-hi link gitcommitDiscardedArrow gitcommitDiscardedFile
-hi link gitcommitSelectedArrow gitcommitSelectedFile
-hi link gitcommitUnmergedArrow gitcommitUnmergedFile
+" JS
+call s:h("jsArrowFunction", s:purple, s:black)
+call s:h("jsFunction", s:purple, s:black)
+call s:h("jsFuncName", s:blue, s:black)
+call s:h("jsFuncCall", s:blue, s:black)
+call s:h("jsUndefined", s:orange, s:black)

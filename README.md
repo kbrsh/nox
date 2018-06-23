@@ -30,14 +30,14 @@ Nox has an oh-my-zsh theme that displays the current working directory and git s
   * `#b3c3cc`
   * `#d1dbe0`
 * Accents
-  * Red - `#ec9393`
-  * Orange - `#ecb093`
-  * Yellow - `#ecce93`
-  * Green - `#b5df9f`
-  * Cyan - `#8cf2ea`
-  * Blue - `#8cd0f2`
-  * Purple - `#cc99e6`
-  * Magenta - `#df9fd4`
+  * Red - `#cd9898`
+  * Orange - `#cdaa98`
+  * Yellow - `#cdbb98`
+  * Green - `#aacd98`
+  * Cyan - `#98cdc9`
+  * Blue - `#90bed5`
+  * Purple - `#bb98cd`
+  * Magenta - `#cd98c4`
 
 ### License
 
