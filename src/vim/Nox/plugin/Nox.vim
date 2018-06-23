@@ -16,7 +16,7 @@ set laststatus=2
 set statusline=%1*user
 set statusline+=\ %{strftime('%H:%M\ %m/%d/%y')}
 set statusline+=\ %{NoxStatusCurrentMode()}
-set statusline+=%2*\ \ \ \ \ %t\ @\ %f
+set statusline+=%2*\ %t\ @\ %f
 set statusline+=%=
 set statusline+=%1*%y
 set statusline+=\ %l:%L
