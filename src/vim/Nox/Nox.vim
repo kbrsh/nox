@@ -1,32 +1,41 @@
-" Nox Syntax
+" General
+
+set autoread " Auto-reload changed files
+set number " Line numbers
+
+" Syntax
+
+if has('termguicolors')
+  set termguicolors
+endif
 
 set background=dark
 syntax reset
 
 let g:colors_name="Nox"
 
-let s:red = {'gui': '#ec7979', 'cterm': 210}
-let s:orange = {'gui': '#e4a281', 'cterm': 180}
-let s:yellow = {'gui': '#e4c381', 'cterm': 186}
-let s:green = {'gui': '#a7d590', 'cterm': 150}
-let s:cyan = {'gui': '#81d4e4', 'cterm': 116}
-let s:blue = {'gui': '#79b2ec', 'cterm': 111}
-let s:purple = {'gui': '#c381e4', 'cterm': 176}
-let s:white = {'gui': '#85a0ad', 'cterm': 109}
-let s:black = {'gui': '#141b1f', 'cterm': 16}
+let s:red = {'gui': '#ec9393', 'cterm': 210}
+let s:orange = {'gui': '#ecb093', 'cterm': 180}
+let s:yellow = {'gui': '#ecce93', 'cterm': 186}
+let s:green = {'gui': '#b5df9f', 'cterm': 150}
+let s:cyan = {'gui': '#8cf2ea', 'cterm': 116}
+let s:blue = {'gui': '#8cd0f2', 'cterm': 111}
+let s:purple = {'gui': '#cc99e6', 'cterm': 176}
+let s:white = {'gui': '#7594a3', 'cterm': 109}
+let s:black = {'gui': '#1f292e', 'cterm': 16}
 
 let s:fg = s:white
 let s:bg = s:black
 
-let s:comment_fg  = {"gui": "#526d7a"}
-let s:gutter_bg   = {"gui": "#29363d"}
-let s:gutter_fg   = {"gui": "#85a0ad"}
+let s:comment_fg  = {"gui": "#5c7a8a"}
+let s:gutter_bg   = {"gui": "#1f292e"}
+let s:gutter_fg   = {"gui": "#5c7a8a"}
 
-let s:cursor_line = {"gui": "#85a0ad"}
-let s:color_col   = {"gui": "#85a0ad"}
+let s:cursor_line = {"gui": "#7594a3"}
+let s:color_col   = {"gui": "#7594a3"}
 
-let s:selection   = {"gui": "#3d525c"}
-let s:vertsplit   = {"gui": "#3d525c"}
+let s:selection   = {"gui": "#33444d"}
+let s:vertsplit   = {"gui": "#33444d"}
 
 
 function! s:h(group, fg, bg, attr)
@@ -164,3 +173,28 @@ hi link gitcommitSelected gitcommitComment
 hi link gitcommitDiscardedArrow gitcommitDiscardedFile
 hi link gitcommitSelectedArrow gitcommitSelectedFile
 hi link gitcommitUnmergedArrow gitcommitUnmergedFile
+
+" Status Line
+
+let g:NoxModeName = {'n': 'NOR', 'v': 'VIS', 'i': 'INS', 'c': 'COM'}
+
+function! NoxStatusCurrentMode() abort
+    let l:NoxCurrentMode = mode()
+    return get(g:NoxModeName, l:NoxCurrentMode, 'O')
+endfunction
+
+set laststatus=2
+set statusline=%1*user
+set statusline+=\ %{strftime('%R',getftime(expand('%')))}
+set statusline+=\ %{NoxStatusCurrentMode()}
+set statusline+=%2*\ \ \ \ \ %t\ →\ %f
+set statusline+=%=
+set statusline+=%1*%y
+set statusline+=\ %l:%L
+
+hi User1 guifg=#33444d guibg=#7594a3
+hi User2 guifg=#7594a3 guibg=#33444d
+
+" Key Maps
+
+imap jk <Esc>
