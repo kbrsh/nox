@@ -1,8 +1,12 @@
 " General
 
-set autoread " Auto-reload changed files
-set number " Line numbers
-set inccommand=nosplit " Incrementally show command results
+set autoread
+set number 
+set inccommand=nosplit 
+set tabstop=3
+set softtabstop=3
+set shiftwidth=3
+set noexpandtab
 
 " Status Line
 
