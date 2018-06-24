@@ -2,8 +2,8 @@
 
 let mapleader="\<Space>"
 set autoread
-set number 
-set inccommand=nosplit 
+set number
+set inccommand=nosplit
 set wildmenu
 set tabstop=3
 set softtabstop=3
@@ -32,3 +32,4 @@ hi User2 guifg=#7594a3 guibg=#33444d
 
 imap jk <Esc>
 nnoremap <CR> :noh<CR>
+autocmd BufWritePre * :%s/\s\+$//g
