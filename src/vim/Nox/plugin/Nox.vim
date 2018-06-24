@@ -1,8 +1,10 @@
 " General
 
+let mapleader="\<Space>"
 set autoread
 set number 
 set inccommand=nosplit 
+set wildmenu
 set tabstop=3
 set softtabstop=3
 set shiftwidth=3
@@ -10,7 +12,7 @@ set noexpandtab
 
 " Status Line
 
-function! NoxStatusCurrentMode() abort
+function! NoxStatusCurrentMode()
     return toupper(mode())
 endfunction
 
@@ -29,4 +31,4 @@ hi User2 guifg=#7594a3 guibg=#33444d
 " Key Maps
 
 imap jk <Esc>
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :noh<CR>
