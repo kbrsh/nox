@@ -32,4 +32,8 @@ hi User2 guifg=#7594a3 guibg=#33444d
 
 imap jk <Esc>
 nnoremap <CR> :noh<CR>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap " ""<Left>
 autocmd BufWritePre * :%s/\s\+$//g
