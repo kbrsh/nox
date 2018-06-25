@@ -36,4 +36,4 @@ inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
-autocmd BufWritePre * :%s/\s\+$//g
+autocmd BufWritePre * :%s/\s\+$//ge
