@@ -1,14 +1,13 @@
 " General
 
-let mapleader="\<Space>"
 set autoread
 set number
 set inccommand=nosplit
 set wildmenu
+set noexpandtab
 set tabstop=3
 set softtabstop=3
 set shiftwidth=3
-set noexpandtab
 
 " Status Line
 
