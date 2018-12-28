@@ -15,14 +15,18 @@ function! NoxStatusCurrentMode()
     return toupper(mode())
 endfunction
 
+function! NoxStatusCurrentBranch()
+	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
 set laststatus=2
-set statusline=%1*user
-set statusline+=\ %{strftime('%H:%M\ %m/%d/%y')}
-set statusline+=\ %{NoxStatusCurrentMode()}
-set statusline+=%2*\ %t
+set statusline=%1*\ user " Name
+set statusline+=\ %2*\ %{NoxStatusCurrentMode()} " Mode
+set statusline+=\ %3*\ %t " File
 set statusline+=%=
-set statusline+=%1*%y
-set statusline+=\ %l:%L
+set statusline+=%3*\ %y " File type
+set statusline+=\ %2*\ %{NoxStatusCurrentBranch()} " Branch
+set statusline+=\ %1*\ %l:%L\ " Position
 
 hi User1 guifg=#33444d guibg=#7594a3
 hi User2 guifg=#7594a3 guibg=#33444d
