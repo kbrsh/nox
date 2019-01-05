@@ -81,6 +81,21 @@ call s:h("Underlined", s:blue, s:black)
 call s:h("Error", s:white, s:red)
 call s:h("Todo", s:white, s:yellow)
 
+" HTML
+call s:h("htmlBold", s:white, s:black)
+call s:h("htmlBoldUnderline", s:white, s:black)
+call s:h("htmlBoldUnderlineItalic", s:white, s:black)
+call s:h("htmlUnderline", s:white, s:black)
+call s:h("htmlUnderlineItalic", s:white, s:black)
+call s:h("htmlItalic", s:white, s:black)
+call s:h("htmlTitle", s:white, s:black)
+call s:h("htmlH1", s:white, s:black)
+call s:h("htmlH2", s:white, s:black)
+call s:h("htmlH3", s:white, s:black)
+call s:h("htmlH4", s:white, s:black)
+call s:h("htmlH5", s:white, s:black)
+call s:h("htmlH6", s:white, s:black)
+
 " JS
 call s:h("jsArrowFunction", s:purple, s:black)
 call s:h("jsFunction", s:purple, s:black)
