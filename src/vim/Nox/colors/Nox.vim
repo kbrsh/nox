@@ -1,7 +1,7 @@
 " Syntax
 
 if has('termguicolors')
-  set termguicolors
+	set termguicolors
 endif
 
 hi clear
@@ -23,7 +23,7 @@ let s:gray = {'gui': '#5c7a8a', 'cterm': 109}
 let s:black = {'gui': '#1f292e', 'cterm': 16}
 
 function! s:h(type, fg, bg)
-  exec "hi " . a:type . " cterm=NONE ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=NONE guibg=" . a:bg.gui . " guifg=" . a:fg.gui
+	exec "hi " . a:type . " cterm=NONE ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=NONE guibg=" . a:bg.gui . " guifg=" . a:fg.gui
 endfunction
 
 call s:h("Cursor", s:black, s:white)
