@@ -14,7 +14,7 @@ filetype indent off
 " Status Line
 
 function! NoxStatusCurrentMode()
-    return toupper(mode())
+	return toupper(mode())
 endfunction
 
 function! NoxStatusCurrentBranch()
