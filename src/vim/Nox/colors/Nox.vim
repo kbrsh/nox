@@ -4,7 +4,8 @@ if has('termguicolors')
   set termguicolors
 endif
 
-syntax clear
+hi clear
+syntax reset
 set background=dark
 
 let g:colors_name="Nox"
