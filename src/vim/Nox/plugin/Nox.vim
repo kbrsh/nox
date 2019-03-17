@@ -9,7 +9,7 @@ set tabstop=3
 set softtabstop=3
 set shiftwidth=3
 
-filetype indent off
+filetype plugin indent off
 
 " Status Line
 
