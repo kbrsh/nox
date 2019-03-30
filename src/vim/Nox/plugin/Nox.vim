@@ -3,13 +3,11 @@
 set autoread
 set number
 set inccommand=nosplit
+set path+=**
 set wildmenu
-set noexpandtab
-set tabstop=3
-set softtabstop=3
-set shiftwidth=3
+set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
 
-filetype plugin indent off
+filetype plugin indent on
 
 " Status Line
 
@@ -36,10 +34,22 @@ hi User3 guifg=#7594a3 guibg=#33444d
 
 " Key Maps
 
-imap jk <Esc>
+function! SmartTab()
+	let col = col(".") - 2
+	if col == -1 || getline(".")[col] == "\t"
+		return "\<tab>"
+	else
+		return "\<c-n>"
+	endif
+endfunction
+
 nnoremap <CR> :noh<CR>
+imap jk <Esc>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
+inoremap <expr> <tab> SmartTab()
+inoremap <s-tab> <c-n>
 autocmd BufWritePre * :%s/\s\+$//ge
+autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
