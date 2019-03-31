@@ -34,22 +34,63 @@ hi User3 guifg=#7594a3 guibg=#33444d
 
 " Key Maps
 
-function! SmartTab()
-	let col = col(".") - 2
-	if col == -1 || getline(".")[col] == "\t"
+function! NoxEnter()
+	" Clear search if there is a term, or else move forward a paragraph
+	if getreg("/") != ""
+		let @/ = ""
+		return ":noh\<CR>"
+	else
+		return "}"
+	endif
+endfunction
+
+function! NoxSkip(char)
+	" Skip a character if it is already the next one
+	if getline(".")[col(".") - 1] == a:char
+		return "\<Right>"
+	else
+		return a:char
+	endif
+endfunction
+
+function! NoxTab()
+	" Tab for indentation if at the beginning of a line, or else provide
+	" auto-completion
+	let l:col = col(".") - 2
+	if l:col == -1 || getline(".")[l:col] == "\t"
 		return "\<tab>"
 	else
 		return "\<c-n>"
 	endif
 endfunction
 
-nnoremap <CR> :noh<CR>
-imap jk <Esc>
+" Enter for moving forward a paragraph or clearing search
+" Backspace for moving back a paragraph
+nnoremap <silent> <expr> <CR> NoxEnter()
+nnoremap <BS> {
+
+" Space for searching files
+nnoremap <Space> :find<Space>
+
+" jk for exiting insert mode
+inoremap jk <Esc>
+
+" Completion and skipping for grouping symbols
 inoremap ( ()<Left>
+inoremap <expr> ) NoxSkip(")")
 inoremap [ []<Left>
+inoremap <expr> ] NoxSkip("]")
 inoremap { {}<Left>
+inoremap <expr> } NoxSkip("}")
 inoremap " ""<Left>
-inoremap <expr> <tab> SmartTab()
+inoremap ' ''<Left>
+
+" Tab completion
+inoremap <expr> <tab> NoxTab()
 inoremap <s-tab> <c-p>
+
+" Remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//ge
+
+" Override default spacing for specific languages
 autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
