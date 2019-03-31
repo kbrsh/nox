@@ -39,6 +39,7 @@ call s:h("Substitute", s:black, s:yellow)
 call s:h("Search", s:black, s:yellow)
 call s:h("VertSplit", s:white, s:black)
 call s:h("Visual", s:black, s:white)
+call s:h("WildMenu", s:black, s:yellow)
 
 call s:h("Normal", s:white, s:black)
 call s:h("Identifier", s:white, s:black)
