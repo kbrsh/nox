@@ -50,6 +50,6 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap " ""<Left>
 inoremap <expr> <tab> SmartTab()
-inoremap <s-tab> <c-n>
+inoremap <s-tab> <c-p>
 autocmd BufWritePre * :%s/\s\+$//ge
 autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
