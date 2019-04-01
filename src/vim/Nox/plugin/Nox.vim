@@ -58,9 +58,9 @@ function! NoxTab()
 	" auto-completion
 	let l:col = col(".") - 2
 	if l:col == -1 || getline(".")[l:col] == "\t"
-		return "\<tab>"
+		return "\<Tab>"
 	else
-		return "\<c-n>"
+		return "\<C-N>"
 	endif
 endfunction
 
@@ -69,11 +69,19 @@ endfunction
 nnoremap <silent> <expr> <CR> NoxEnter()
 nnoremap <BS> {
 
+" Tab for buffer switching
+nnoremap <silent> <Tab> :bn<CR>
+nnoremap <silent> <S-Tab> :bp<CR>
+
 " Space for searching files
 nnoremap <Space> :find<Space>
 
 " jk for exiting insert mode
 inoremap jk <Esc>
+
+" Tab completion
+inoremap <expr> <Tab> NoxTab()
+inoremap <S-Tab> <C-P>
 
 " Completion and skipping for grouping symbols
 inoremap ( ()<Left>
@@ -84,10 +92,6 @@ inoremap { {}<Left>
 inoremap <expr> } NoxSkip("}")
 inoremap " ""<Left>
 inoremap ' ''<Left>
-
-" Tab completion
-inoremap <expr> <tab> NoxTab()
-inoremap <s-tab> <c-p>
 
 " Remove trailing whitespace on write
 autocmd BufWritePre * :%s/\s\+$//ge
