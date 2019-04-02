@@ -21,24 +21,23 @@ Nox has an oh-my-zsh theme that displays the current working directory and git s
 ### Color Palette
 
 * Shades
-  * `#1f292e`
-  * `#33444d`
-  * `#475f6b`
-  * `#5c7a8a`
-  * `#7594a3`
-  * `#94acb8`
-  * `#b3c3cc`
-  * `#d1dbe0`
+  * `HSL(200, 15%, 19%)`
+  * `HSL(200, 15%, 28%)`
+  * `HSL(200, 15%, 38%)`
+  * `HSL(200, 15%, 47%)`
+  * `HSL(200, 15%, 56%)`
+  * `HSL(200, 15%, 66%)`
+  * `HSL(200, 15%, 75%)`
+  * `Lightness = (28/3)x + 19`
 * Accents
-  * Red - `#cd9898`
-  * Orange - `#cdaa98`
-  * Yellow - `#cdbb98`
-  * Green - `#aacd98`
-  * Cyan - `#98cdc9`
-  * Blue - `#90bed5`
-  * Purple - `#bb98cd`
-  * Magenta - `#cd98c4`
+  * Red - `HSL(0, 30%, 56%)`
+  * Orange - `HSL(30, 30%, 56%)`
+  * Yellow - `HSL(50, 45%, 66%)`
+  * Green - `HSL(100, 30%, 66%)`
+  * Cyan - `HSL(175, 15%, 66%)`
+  * Blue - `HSL(200, 30%, 66%)`
+  * Purple - `HSL(300, 15%, 66%)`
 
 ### License
 
-Licensed under the [MIT License](https://kbrsh.github.io/license) by [Kabir Shah](https://kabir.ml)
+Licensed under the [MIT License](https://kbrsh.github.io/license) by [Kabir Shah](https://kabir.sh)

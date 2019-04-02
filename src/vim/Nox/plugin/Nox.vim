@@ -28,9 +28,9 @@ set statusline+=%3*\ %y " File type
 set statusline+=\ %2*\ %{NoxStatusCurrentBranch()} " Branch
 set statusline+=\ %1*\ %l:%L\ " Position
 
-hi User1 guifg=#33444d guibg=#7594a3
-hi User2 guifg=#33444d guibg=#5c7a8a
-hi User3 guifg=#7594a3 guibg=#33444d
+hi User1 guifg=#293338 guibg=#7e94a0
+hi User2 guifg=#293338 guibg=#52666f
+hi User3 guifg=#7e94a0 guibg=#3d4b52
 
 " Key Maps
 
@@ -75,6 +75,9 @@ nnoremap <silent> <S-Tab> :bp<CR>
 
 " Space for searching files
 nnoremap <Space> :find<Space>
+
+" Y for yanking to end of line
+nnoremap Y y$
 
 " jk for exiting insert mode
 inoremap jk <Esc>
