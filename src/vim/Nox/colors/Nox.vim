@@ -22,8 +22,9 @@ let s:lightgray = {'gui': '#7e94a0', 'cterm': 109} " HSL(200, 15%, 56%)
 let s:gray = {'gui': '#52666f', 'cterm': 109} " HSL(200, 15%, 38%)
 let s:black = {'gui': '#293338', 'cterm': 16} " HSL(200, 15%, 19%)
 
-function! s:h(type, fg, bg)
-	exec "hi " . a:type . " cterm=NONE ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=NONE guibg=" . a:bg.gui . " guifg=" . a:fg.gui
+function! s:h(type, fg, bg, ...)
+	let l:style = get(a:, 1, "none")
+	exec "hi " . a:type . " cterm=" . l:style . " ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=" . l:style . " guibg=" . a:bg.gui . " guifg=" . a:fg.gui
 endfunction
 
 call s:h("Cursor", s:black, s:white)
@@ -31,6 +32,7 @@ call s:h("iCursor", s:white, s:black)
 call s:h("IncSearch", s:black, s:yellow)
 call s:h("LineNr", s:gray, s:black)
 call s:h("NonText", s:gray, s:black)
+call s:h("MatchParen", s:white, s:black, "underline")
 call s:h("Pmenu", s:black, s:gray)
 call s:h("PmenuSel", s:black, s:white)
 call s:h("PmenuSbar", s:black, s:black)
