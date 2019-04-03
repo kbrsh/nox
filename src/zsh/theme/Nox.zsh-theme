@@ -25,6 +25,7 @@ PROMPT="$(NOX_FULL)"
 
 function zle-line-init zle-keymap-select {
 	PROMPT="$(NOX_FULL)"
+	zle reset-prompt
 }
 
 zle -N zle-line-init
