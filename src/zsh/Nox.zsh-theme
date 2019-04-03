@@ -1,6 +1,6 @@
 # Nox ZSH Theme
 
-local NOX_NAME="%{$fg[cyan]%}λ%{$reset_color%}"
+local NOX_NAME="%{$fg[cyan]%}user%{$reset_color%}"
 local NOX_CURRENT="%{$fg[blue]%}%~%{$reset_color%}"
 local NOX_PROMPT="%(?:%{$fg[green]%}➜%{$reset_color%}:%{$fg[red]%}➜%{$reset_color%})"
 
