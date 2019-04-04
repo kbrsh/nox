@@ -7,6 +7,9 @@ set path+=**
 set wildmenu
 set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
 
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+
 filetype plugin indent on
 
 " Status Line
