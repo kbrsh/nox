@@ -1,6 +1,6 @@
 " Syntax
 
-if has('termguicolors')
+if has("termguicolors")
 	set termguicolors
 endif
 
@@ -10,17 +10,17 @@ set background=dark
 
 let g:colors_name="Nox"
 
-let s:red = {'gui': '#c28e8e', 'cterm': 210} " HSL(0, 30%, 66%)
-let s:orange = {'gui': '#b08f6d', 'cterm': 180} " HSL(30, 30%, 56%)
-let s:yellow = {'gui': '#cfc281', 'cterm': 186} " HSL(50, 45%, 66%)
-let s:green = {'gui': '#a0c28e', 'cterm': 150} " HSL(100, 30%, 66%)
-let s:cyan = {'gui': '#9bb5b3', 'cterm': 116} " HSL(175, 15%, 66%)
-let s:blue = {'gui': '#8eb1c2', 'cterm': 111} " HSL(200, 30%, 66%)
-let s:purple = {'gui': '#b59bb5', 'cterm': 176} " HSL(300, 15%, 66%)
-let s:white = {'gui': '#b6c2c9', 'cterm': 109} " HSL(200, 15%, 75%)
-let s:lightgray = {'gui': '#7e94a0', 'cterm': 109} " HSL(200, 15%, 56%)
-let s:gray = {'gui': '#52666f', 'cterm': 109} " HSL(200, 15%, 38%)
-let s:black = {'gui': '#293338', 'cterm': 16} " HSL(200, 15%, 19%)
+let s:red = {"gui": "#b87f7f", "cterm": 210} " HSL(0, 29%, 61%)
+let s:orange = {"gui": "#b8927f", "cterm": 180} " HSL(20, 29%, 61%)
+let s:yellow = {"gui": "#b8af7f", "cterm": 186} " HSL(50, 29%, 61%)
+let s:green = {"gui": "#92b87f", "cterm": 150} " HSL(100, 29%, 61%)
+let s:cyan = {"gui": "#7fb8af", "cterm": 116} " HSL(170, 29%, 61%)
+let s:blue = {"gui": "#7fa5b8", "cterm": 111} " HSL(200, 29%, 61%)
+let s:purple = {"gui": "#a98ea9", "cterm": 176} " HSL(300, 14%, 61%)
+let s:white = {"gui": "#b3c0c6", "cterm": 109} " HSL(200, 14%, 74%)
+let s:lightgray = {"gui": "#6b838e", "cterm": 109} " HSL(200, 14%, 49%)
+let s:gray = {"gui": "#4f6069", "cterm": 109} " HSL(200, 14%, 36%)
+let s:black = {"gui": "#323d43", "cterm": 16} " HSL(200, 14%, 23%)
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")
