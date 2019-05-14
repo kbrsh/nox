@@ -6,7 +6,7 @@ set inccommand=nosplit
 set path+=**
 set wildmenu
 set wildoptions+=pum
-set wildignore=*.o,*.so,*/node_modules/*
+set wildignore+=*.o,*.so,*/node_modules/*
 set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
 
 let g:netrw_banner=0
