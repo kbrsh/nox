@@ -2,6 +2,7 @@
 
 set autoread
 set number
+set hidden
 set inccommand=nosplit
 set path+=**
 set wildmenu
@@ -76,6 +77,7 @@ nnoremap <BS> {
 " Tab for buffer switching
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
+nnoremap <silent> <M-Tab> :ls<CR>:b<Space>
 
 " Space for searching files
 nnoremap <Space> :find<Space>
