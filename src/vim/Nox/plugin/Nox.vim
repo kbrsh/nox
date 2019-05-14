@@ -77,7 +77,7 @@ nnoremap <BS> {
 " Tab for buffer switching
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
-nnoremap <silent> <M-Tab> :ls<CR>:b<Space>
+nnoremap <M-Tab> :b<Space>
 
 " Space for searching files
 nnoremap <Space> :find<Space>
