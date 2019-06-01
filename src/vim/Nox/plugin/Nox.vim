@@ -69,6 +69,12 @@ function! NoxTab()
 	endif
 endfunction
 
+" H and L for moving to the start or end of a line
+nnoremap ^ H
+nnoremap $ L
+nnoremap H ^
+nnoremap L $
+
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
 nnoremap <silent> <expr> <CR> NoxEnter()
