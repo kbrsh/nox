@@ -75,10 +75,18 @@ nnoremap $ L
 nnoremap H ^
 nnoremap L $
 
+xnoremap ^ H
+xnoremap $ L
+xnoremap H ^
+xnoremap L $
+
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
 nnoremap <silent> <expr> <CR> NoxEnter()
 nnoremap <BS> {
+
+xnoremap <silent> <expr> <CR> NoxEnter()
+xnoremap <BS> {
 
 " Tab for buffer switching
 nnoremap <silent> <Tab> :bn<CR>
