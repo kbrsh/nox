@@ -85,7 +85,7 @@ xnoremap L $
 nnoremap <silent> <expr> <CR> NoxEnter()
 nnoremap <BS> {
 
-xnoremap <silent> <expr> <CR> NoxEnter()
+xnoremap <CR> }
 xnoremap <BS> {
 
 " Tab for buffer switching
@@ -93,8 +93,9 @@ nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <M-Tab> :b<Space>
 
-" Space for searching files
+" Space for searching files or leaving visual mode
 nnoremap <Space> :find<Space>
+xnoremap <Space> <Esc>
 
 " Y for yanking to end of line
 nnoremap Y y$
