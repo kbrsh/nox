@@ -10,17 +10,17 @@ set background=dark
 
 let g:colors_name="Nox"
 
-let s:red = {"gui": "#b87f7f", "cterm": 210} " HSL(0, 29%, 61%)
-let s:orange = {"gui": "#b8927f", "cterm": 180} " HSL(20, 29%, 61%)
-let s:yellow = {"gui": "#b8af7f", "cterm": 186} " HSL(50, 29%, 61%)
-let s:green = {"gui": "#92b87f", "cterm": 150} " HSL(100, 29%, 61%)
-let s:cyan = {"gui": "#7fb8af", "cterm": 116} " HSL(170, 29%, 61%)
-let s:blue = {"gui": "#7fa5b8", "cterm": 111} " HSL(200, 29%, 61%)
-let s:purple = {"gui": "#a98ea9", "cterm": 176} " HSL(300, 14%, 61%)
-let s:white = {"gui": "#b3c0c6", "cterm": 109} " HSL(200, 14%, 74%)
-let s:lightgray = {"gui": "#6b838e", "cterm": 109} " HSL(200, 14%, 49%)
-let s:gray = {"gui": "#4f6069", "cterm": 109} " HSL(200, 14%, 36%)
-let s:black = {"gui": "#323d43", "cterm": 16} " HSL(200, 14%, 23%)
+let s:red = {"gui": "#b17272", "cterm": 210} " HSL(0, 29%, 57%)
+let s:orange = {"gui": "#b18772", "cterm": 180} " HSL(20, 29%, 57%)
+let s:yellow = {"gui": "#b1a772", "cterm": 186} " HSL(50, 29%, 57%)
+let s:green = {"gui": "#8ca182", "cterm": 150} " HSL(100, 14%, 57%)
+let s:cyan = {"gui": "#72b1a7", "cterm": 116} " HSL(170, 29%, 57%)
+let s:blue = {"gui": "#729cb1", "cterm": 111} " HSL(200, 29%, 57%)
+let s:purple = {"gui": "#a182a1", "cterm": 176} " HSL(300, 14%, 57%)
+let s:white = {"gui": "#abb9bf", "cterm": 109} " HSL(200, 14%, 71%)
+let s:lightgray = {"gui": "#5e737d", "cterm": 109} " HSL(200, 14%, 43%)
+let s:gray = {"gui": "#35515f", "cterm": 109} " HSL(200, 29%, 29%)
+let s:black = {"gui": "#19272e", "cterm": 16} " HSL(200, 29%, 14%)
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")

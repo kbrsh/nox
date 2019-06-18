@@ -33,9 +33,9 @@ set statusline+=%3*\ %y " File type
 set statusline+=\ %2*\ %{NoxStatusCurrentBranch()} " Branch
 set statusline+=\ %1*\ %l:%L\ " Position
 
-hi User1 guifg=#323d43 guibg=#6b838e
-hi User2 guifg=#323d43 guibg=#4f6069
-hi User3 guifg=#6b838e guibg=#323d43
+hi User1 guifg=#19272e guibg=#5e737d
+hi User2 guifg=#19272e guibg=#35515f
+hi User3 guifg=#5e737d guibg=#19272e
 
 " Key Maps
 
