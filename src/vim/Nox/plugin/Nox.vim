@@ -39,7 +39,7 @@ hi User3 guifg=#5e737d guibg=#19272e
 
 " Key Maps
 
-let mapleader = "<Space>"
+let mapleader = "\<Space>"
 
 function! NoxEnter()
 	" Clear search if there is a term, or else move forward a paragraph
