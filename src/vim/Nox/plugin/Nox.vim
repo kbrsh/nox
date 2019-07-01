@@ -39,6 +39,8 @@ hi User3 guifg=#5e737d guibg=#19272e
 
 " Key Maps
 
+let mapleader = "<Space>"
+
 function! NoxEnter()
 	" Clear search if there is a term, or else move forward a paragraph
 	if getreg("/") != ""
@@ -89,16 +91,13 @@ xnoremap <CR> }
 xnoremap <BS> {
 
 " Tab for buffer switching
-nnoremap <silent> <Tab> :bn<CR>
-nnoremap <silent> <S-Tab> :bp<CR>
-nnoremap <M-Tab> :b<Space>
-
-" Space for searching files or leaving visual mode
-nnoremap <Space> :find<Space>
-xnoremap <Space> <Esc>
+nnoremap <silent> <Tab> <C-^>
 
 " Y for yanking to end of line
 nnoremap Y y$
+
+" Leader + f for searching files
+nnoremap <Leader>f :find<Space>
 
 " jk for exiting insert mode
 inoremap jk <Esc>
