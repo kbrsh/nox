@@ -40,9 +40,10 @@ hi User3 guifg=#5e737d guibg=#19272e
 " Key Maps
 
 let mapleader = "\<Space>"
+let g:NoxSeekSearch = []
 
 function! NoxEnter()
-	" Clear search if there is a term, or else move forward a paragraph
+	" Clear search if there is a term, or else move forward a paragraph.
 	if getreg("/") != ""
 		let @/ = ""
 		return ":noh\<CR>"
@@ -51,8 +52,87 @@ function! NoxEnter()
 	endif
 endfunction
 
+function! NoxSeek(...)
+	" Seek forwards.
+	if a:0 == 0
+		let l:char1 = nr2char(getchar())
+		let l:char2 = nr2char(getchar())
+	else
+		let l:char1 = a:1
+		let l:char2 = a:2
+	endif
+
+	let l:col = col(".")
+	let l:seek = stridx(getline(".")[l:col:], l:char1 . l:char2)
+
+	if a:0 == 0
+		let g:NoxSeekSearch = [function("NoxSeek"), function("NoxSeekBack"), l:char1, l:char2]
+	endif
+
+	if l:seek != -1
+		let l:seek = l:col + l:seek
+
+		if l:seek == 0
+			normal! 0
+		else
+			execute "normal! 0" . l:seek . "l"
+		endif
+	endif
+endfunction
+
+function! NoxSeekBack(...)
+	" Seek backwards.
+	if a:0 == 0
+		let l:char1 = nr2char(getchar())
+		let l:char2 = nr2char(getchar())
+	else
+		let l:char1 = a:1
+		let l:char2 = a:2
+	endif
+
+	let l:col = col(".") - 2
+
+	if l:col != -1
+		let l:seek = strridx(getline(".")[:l:col], l:char1 . l:char2)
+
+		if a:0 == 0
+			let g:NoxSeekSearch = [function("NoxSeekBack"), function("NoxSeek"), l:char1, l:char2]
+		endif
+
+		if l:seek == 0
+			normal! 0
+		elseif l:seek != -1
+			execute "normal! 0" . l:seek . "l"
+		endif
+	endif
+endfunction
+
+function! NoxSeekNext()
+	" If there is a seek search, execute it. Otherwise go to the next search.
+	if empty(g:NoxSeekSearch)
+		normal! ;
+	else
+		call g:NoxSeekSearch[0](g:NoxSeekSearch[2], g:NoxSeekSearch[3])
+	endif
+endfunction
+
+function! NoxSeekPrevious()
+	" If there is a seek search, execute it backwards. Otherwise go to the next
+	" search.
+	if empty(g:NoxSeekSearch)
+		normal! ,
+	else
+		call g:NoxSeekSearch[1](g:NoxSeekSearch[2], g:NoxSeekSearch[3])
+	endif
+endfunction
+
+function! NoxSeekClear()
+	" Clear the seek search.
+	let g:NoxSeekSearch = []
+endfunction
+
 function! NoxSkip(char)
-	" Skip a character if it is already the next one
+	" Skip a character if it is already the next one.
 	if getline(".")[col(".") - 1] == a:char
 		return "\<Right>"
 	else
@@ -62,7 +142,7 @@ endfunction
 
 function! NoxTab()
 	" Tab for indentation if at the beginning of a line, or else provide
-	" auto-completion
+	" auto-completion.
 	let l:col = col(".") - 2
 	if l:col == -1 || getline(".")[l:col] == "\t"
 		return "\<Tab>"
@@ -72,7 +152,7 @@ function! NoxTab()
 endfunction
 
 function! NoxComment()
-	" Comment out lines
+	" Comment out lines.
 	let l:line = getline(".")
 	let l:commentstring = substitute(&commentstring, "%s", " %s", "")
 	let l:match = matchlist(l:line, substitute(escape(l:commentstring, ".*"), "%s", "\\\\(.*\\\\)", ""))
@@ -94,6 +174,16 @@ xnoremap ^ H
 xnoremap $ L
 xnoremap H ^
 xnoremap L $
+
+" s and S to seek forwards and backwards in a line
+nnoremap <silent> s :call NoxSeek()<CR>
+nnoremap <silent> S :call NoxSeekBack()<CR>
+nnoremap <silent> ; :call NoxSeekNext()<CR>
+nnoremap <silent> , :call NoxSeekPrevious()<CR>
+nnoremap <silent> f :call NoxSeekClear()<CR>f
+nnoremap <silent> F :call NoxSeekClear()<CR>F
+nnoremap <silent> t :call NoxSeekClear()<CR>t
+nnoremap <silent> T :call NoxSeekClear()<CR>T
 
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
