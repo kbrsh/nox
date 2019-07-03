@@ -71,6 +71,19 @@ function! NoxTab()
 	endif
 endfunction
 
+function! NoxComment()
+	" Comment out lines
+	let l:line = getline(".")
+	let l:commentstring = substitute(&commentstring, "%s", " %s", "")
+	let l:match = matchlist(l:line, substitute(escape(l:commentstring, ".*"), "%s", "\\\\(.*\\\\)", ""))
+
+	if empty(l:match)
+		call setline(".", printf(l:commentstring, l:line))
+	else
+		call setline(".", l:match[1])
+	endif
+endfunction
+
 " H and L for moving to the start or end of a line
 nnoremap ^ H
 nnoremap $ L
@@ -86,7 +99,6 @@ xnoremap L $
 " Backspace for moving back a paragraph
 nnoremap <silent> <expr> <CR> NoxEnter()
 nnoremap <BS> {
-
 xnoremap <CR> }
 xnoremap <BS> {
 
@@ -96,8 +108,15 @@ nnoremap <silent> <Tab> <C-^>
 " Y for yanking to end of line
 nnoremap Y y$
 
+" Leader + e for exploring files
+nnoremap <Leader>e :Explore<CR>
+
 " Leader + f for searching files
 nnoremap <Leader>f :find<Space>
+
+" Leader + / for commenting lines
+nnoremap <silent> <Leader>/ :call NoxComment()<CR>$
+xnoremap <silent> <Leader>/ :call NoxComment()<CR>$
 
 " jk for exiting insert mode
 inoremap jk <Esc>
