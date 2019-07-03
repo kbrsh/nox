@@ -29,6 +29,8 @@ endfunction
 
 call s:h("Cursor", s:black, s:white)
 call s:h("iCursor", s:white, s:black)
+call s:h("CursorLine", s:black, s:lightgray)
+call s:h("Directory", s:blue, s:black)
 call s:h("IncSearch", s:black, s:yellow)
 call s:h("LineNr", s:gray, s:black)
 call s:h("NonText", s:gray, s:black)
