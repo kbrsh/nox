@@ -154,13 +154,15 @@ endfunction
 function! NoxComment()
 	" Comment out lines.
 	let l:line = getline(".")
+	let l:content = substitute(l:line, "^\\s*", "", "")
+	let l:indent = matchstr(l:line, "^\\s*")
 	let l:commentstring = substitute(&commentstring, "%s", " %s", "")
-	let l:match = matchlist(l:line, substitute(escape(l:commentstring, ".*"), "%s", "\\\\(.*\\\\)", ""))
+	let l:match = matchlist(l:content, substitute(escape(l:commentstring, ".*"), "%s", "\\\\(.*\\\\)", ""))
 
 	if empty(l:match)
-		call setline(".", printf(l:commentstring, l:line))
+		call setline(".", l:indent . printf(l:commentstring, l:content))
 	else
-		call setline(".", l:match[1])
+		call setline(".", l:indent . l:match[1])
 	endif
 endfunction
 
