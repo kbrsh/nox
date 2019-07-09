@@ -23,8 +23,8 @@ Nox has an oh-my-zsh theme that displays the current working directory and git s
 * Shades
   * `HSL(200, b=2/7, b=1/7)` - `#19272e`
   * `HSL(200, b+(1-b)*0/7, b+(1-b)*1/7)` - `#314c59`
-  * `HSL(200, b+(1-b)*0/7, b+(1-b)*3/7)` - `#5e8ea6`
-  * `HSL(200, b+(1-b)*0/7, b+(1-b)*5/7)` - `#b0c8d4`
+  * `HSL(200, b*3/7, b+(1-b)*3/7)` - `#738791`
+  * `HSL(200, b*3/7, b+(1-b)*4/7)` - `#95a4ac`
 * Accents
   * Red - `HSL(0, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc8585`
   * Orange - `HSL(20, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc9885`
