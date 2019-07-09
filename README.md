@@ -6,9 +6,9 @@ Beautiful dark-themed color scheme.
 
 ### Usage
 
-##### Atom
+##### Vim
 
-Nox has an Atom syntax theme. To use it, download the `src/atom/Nox.less` file and link it as a syntax theme.
+Nox has Vim colors and configuration. To use it, download the `src/vim/Nox` directory as a plugin, similar to `src/vim/Config.vim`.
 
 ##### iTerm
 
@@ -21,18 +21,18 @@ Nox has an oh-my-zsh theme that displays the current working directory and git s
 ### Color Palette
 
 * Shades
-  * `HSL(200, 29%, 14%)`
-  * `HSL(200, 29%, 29%)`
-  * `HSL(200, 14%, 43%)`
-  * `HSL(200, 14%, 71%)`
+  * `HSL(200, b=2/7, b=1/7)` - `#19272e`
+  * `HSL(200, b+(1-b)*0/7, b+(1-b)*1/7)` - `#314c59`
+  * `HSL(200, b+(1-b)*0/7, b+(1-b)*3/7)` - `#5e8ea6`
+  * `HSL(200, b+(1-b)*0/7, b+(1-b)*5/7)` - `#b0c8d4`
 * Accents
-  * Red - `HSL(0, 29%, 57%)`
-  * Orange - `HSL(20, 29%, 57%)`
-  * Yellow - `HSL(50, 29%, 57%)`
-  * Green - `HSL(100, 14%, 57%)`
-  * Cyan - `HSL(170, 29%, 57%)`
-  * Blue - `HSL(200, 29%, 57%)`
-  * Purple - `HSL(300, 14%, 57%)`
+  * Red - `HSL(0, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc8585`
+  * Orange - `HSL(20, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc9885`
+  * Yellow - `HSL(50, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bcb385`
+  * Green - `HSL(100, b*4/7, b+(1-b)*4/7)` - `#9cb092`
+  * Cyan - `HSL(170, b+(1-b)*0/7, b+(1-b)*4/7)` - `#85bcb3`
+  * Blue - `HSL(200, b+(1-b)*0/7, b+(1-b)*4/7)` - `#85aabc`
+  * Purple - `HSL(300, b*4/7, b+(1-b)*4/7)` - `#b092b0`
 
 ### License
 

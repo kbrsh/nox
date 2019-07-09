@@ -10,17 +10,17 @@ set background=dark
 
 let g:colors_name="Nox"
 
-let s:red = {"gui": "#b17272", "cterm": 210} " HSL(0, 29%, 57%)
-let s:orange = {"gui": "#b18772", "cterm": 180} " HSL(20, 29%, 57%)
-let s:yellow = {"gui": "#b1a772", "cterm": 186} " HSL(50, 29%, 57%)
-let s:green = {"gui": "#8ca182", "cterm": 150} " HSL(100, 14%, 57%)
-let s:cyan = {"gui": "#72b1a7", "cterm": 116} " HSL(170, 29%, 57%)
-let s:blue = {"gui": "#729cb1", "cterm": 111} " HSL(200, 29%, 57%)
-let s:purple = {"gui": "#a182a1", "cterm": 176} " HSL(300, 14%, 57%)
-let s:white = {"gui": "#abb9bf", "cterm": 109} " HSL(200, 14%, 71%)
-let s:lightgray = {"gui": "#5e737d", "cterm": 109} " HSL(200, 14%, 43%)
-let s:gray = {"gui": "#35515f", "cterm": 109} " HSL(200, 29%, 29%)
-let s:black = {"gui": "#19272e", "cterm": 16} " HSL(200, 29%, 14%)
+let s:red = {"gui": "#bc8585", "cterm": 210}
+let s:orange = {"gui": "#bc9885", "cterm": 180}
+let s:yellow = {"gui": "#bcb385", "cterm": 186}
+let s:green = {"gui": "#9cb092", "cterm": 150}
+let s:cyan = {"gui": "#85bcb3", "cterm": 116}
+let s:blue = {"gui": "#85aabc", "cterm": 111}
+let s:purple = {"gui": "#b092b0", "cterm": 176}
+let s:white = {"gui": "#b0c8d4", "cterm": 109}
+let s:lightgray = {"gui": "#5e8ea6", "cterm": 109}
+let s:gray = {"gui": "#314c59", "cterm": 109}
+let s:black = {"gui": "#19272e", "cterm": 16}
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")
