@@ -10,8 +10,8 @@ set background=dark
 
 let g:colors_name="Nox"
 
-let s:black = {"gui": "#121c21", "cterm": 16}
-let s:gray = {"gui": "#233843", "cterm": 109}
+let s:black = {"gui": "#19272f", "cterm": 16}
+let s:gray = {"gui": "#335261", "cterm": 109}
 let s:lightgray = {"gui": "#8ea0a9", "cterm": 109}
 let s:white = {"gui": "#abb9bf", "cterm": 109}
 let s:red = {"gui": "#b06969", "cterm": 210}
