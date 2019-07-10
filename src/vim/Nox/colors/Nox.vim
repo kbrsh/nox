@@ -10,17 +10,17 @@ set background=dark
 
 let g:colors_name="Nox"
 
-let s:red = {"gui": "#bc8585", "cterm": 210}
-let s:orange = {"gui": "#bc9885", "cterm": 180}
-let s:yellow = {"gui": "#bcb385", "cterm": 186}
-let s:green = {"gui": "#9cb092", "cterm": 150}
-let s:cyan = {"gui": "#85bcb3", "cterm": 116}
-let s:blue = {"gui": "#85aabc", "cterm": 111}
-let s:purple = {"gui": "#b092b0", "cterm": 176}
-let s:white = {"gui": "#95a4ac", "cterm": 109}
-let s:lightgray = {"gui": "#738791", "cterm": 109}
-let s:gray = {"gui": "#314c59", "cterm": 109}
-let s:black = {"gui": "#19272e", "cterm": 16}
+let s:black = {"gui": "#121c21", "cterm": 16}
+let s:gray = {"gui": "#233843", "cterm": 109}
+let s:lightgray = {"gui": "#8ea0a9", "cterm": 109}
+let s:white = {"gui": "#abb9bf", "cterm": 109}
+let s:red = {"gui": "#b06969", "cterm": 210}
+let s:orange = {"gui": "#b08069", "cterm": 180}
+let s:yellow = {"gui": "#b0a469", "cterm": 186}
+let s:green = {"gui": "#879c7c", "cterm": 150}
+let s:cyan = {"gui": "#69b0a4", "cterm": 116}
+let s:blue = {"gui": "#6998b0", "cterm": 111}
+let s:purple = {"gui": "#9c7c9c", "cterm": 176}
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")

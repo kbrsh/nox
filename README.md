@@ -21,18 +21,18 @@ Nox has an oh-my-zsh theme that displays the current working directory and git s
 ### Color Palette
 
 * Shades
-  * `HSL(200, b=2/7, b=1/7)` - `#19272e`
-  * `HSL(200, b+(1-b)*0/7, b+(1-b)*1/7)` - `#314c59`
-  * `HSL(200, b*3/7, b+(1-b)*3/7)` - `#738791`
-  * `HSL(200, b*3/7, b+(1-b)*4/7)` - `#95a4ac`
+  * `HSL(200, 31%, 10%)` - `#121c21`
+  * `HSL(200, 31%, 20%)` - `#233843`
+  * `HSL(200, 14%, 61%)` - `#8ea0a9`
+  * `HSL(200, 14%, 71%)` - `#abb9bf`
 * Accents
-  * Red - `HSL(0, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc8585`
-  * Orange - `HSL(20, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bc9885`
-  * Yellow - `HSL(50, b+(1-b)*0/7, b+(1-b)*4/7)` - `#bcb385`
-  * Green - `HSL(100, b*4/7, b+(1-b)*4/7)` - `#9cb092`
-  * Cyan - `HSL(170, b+(1-b)*0/7, b+(1-b)*4/7)` - `#85bcb3`
-  * Blue - `HSL(200, b+(1-b)*0/7, b+(1-b)*4/7)` - `#85aabc`
-  * Purple - `HSL(300, b*4/7, b+(1-b)*4/7)` - `#b092b0`
+  * Red - `HSL(0, 31%, 55%)` - `#b06969`
+  * Orange - `HSL(20, 31%, 55%)` - `#b08069`
+  * Yellow - `HSL(50, 31%, 55%)` - `#b0a469`
+  * Green - `HSL(100, 14%, 55%)` - `#879c7c`
+  * Cyan - `HSL(170, 31%, 55%)` - `#69b0a4`
+  * Blue - `HSL(200, 31%, 55%)` - `#6998b0`
+  * Purple - `HSL(300, 14%, 55%)` - `#9c7c9c`
 
 ### License
 
