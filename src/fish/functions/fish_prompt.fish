@@ -7,11 +7,14 @@ user "
 	echo -n (prompt_pwd)
 
 	if test -d .git
-		if string match -r "(M|\?\?) " (git status --porcelain) > /dev/null
+		if git status --porcelain | grep "^[ MADRCU?!][MADRCU?!]" > /dev/null
+			# Check for any modified files in the working area.
 			set_color red
-		else if string match -r "A " (git status --porcelain) > /dev/null
+		else if git status --porcelain | grep "^[MADRCU?!]" > /dev/null
+			# Check for any modified files in the staging area.
 			set_color yellow
 		else
+			# If nothing is modified and everything is committed, default to green.
 			set_color green
 		end
 
@@ -20,7 +23,7 @@ user "
 
 	switch $fish_bind_mode
 		case default
-			set_color magenta
+			set_color blue
 		case insert
 			set_color yellow
 		case visual
