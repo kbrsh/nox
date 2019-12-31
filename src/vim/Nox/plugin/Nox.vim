@@ -78,8 +78,6 @@ function! NoxSeek(...)
 			execute "normal! 0" . l:seek . "l"
 		endif
 	endif
-
-	return ""
 endfunction
 
 function! NoxSeekBack(...)
@@ -107,8 +105,6 @@ function! NoxSeekBack(...)
 			execute "normal! 0" . l:seek . "l"
 		endif
 	endif
-
-	return ""
 endfunction
 
 function! NoxSeekNext()
@@ -118,8 +114,6 @@ function! NoxSeekNext()
 	else
 		call g:NoxSeekSearch[0](g:NoxSeekSearch[2], g:NoxSeekSearch[3])
 	endif
-
-	return ""
 endfunction
 
 function! NoxSeekPrevious()
@@ -130,15 +124,11 @@ function! NoxSeekPrevious()
 	else
 		call g:NoxSeekSearch[1](g:NoxSeekSearch[2], g:NoxSeekSearch[3])
 	endif
-
-	return ""
 endfunction
 
-function! NoxSeekClear(char)
+function! NoxSeekClear()
 	" Clear the seek search.
 	let g:NoxSeekSearch = []
-
-	return a:char
 endfunction
 
 function! NoxSkip(char)
@@ -174,8 +164,6 @@ function! NoxComment()
 	else
 		call setline(".", l:indent . l:match[1])
 	endif
-
-	return ""
 endfunction
 
 " H and L for moving to the start or end of a line
@@ -185,14 +173,14 @@ noremap H ^
 noremap L $
 
 " s and S to seek forwards and backwards in a line
-noremap <silent> <expr> s NoxSeek()
-noremap <silent> <expr> S NoxSeekBack()
-noremap <silent> <expr> ; NoxSeekNext()
-noremap <silent> <expr> , NoxSeekPrevious()
-noremap <silent> <expr> f NoxSeekClear("f")
-noremap <silent> <expr> F NoxSeekClear("F")
-noremap <silent> <expr> t NoxSeekClear("t")
-noremap <silent> <expr> T NoxSeekClear("T")
+noremap <silent> s :call NoxSeek()<CR>
+noremap <silent> S :call NoxSeekBack()<CR>
+noremap <silent> ; :call NoxSeekNext()<CR>
+noremap <silent> , :call NoxSeekPrevious()<CR>
+noremap <silent> f :call NoxSeekClear()<CR>f
+noremap <silent> F :call NoxSeekClear()<CR>F
+noremap <silent> t :call NoxSeekClear()<CR>t
+noremap <silent> T :call NoxSeekClear()<CR>T
 
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
@@ -222,8 +210,8 @@ nnoremap <Leader>e :Explore<CR>
 nnoremap <Leader>f :find<Space>
 
 " Leader + / for commenting lines
-nnoremap <silent> <expr> <Leader>/ NoxComment()
-xnoremap <silent> <expr> <Leader>/ NoxComment()
+nnoremap <silent> <Leader>/ :call NoxComment()<CR>
+xnoremap <silent> <Leader>/ :call NoxComment()<CR>
 
 " jk for exiting insert mode
 inoremap jk <Esc>
