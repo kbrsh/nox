@@ -7,7 +7,7 @@ set inccommand=nosplit
 set path+=**
 set wildmenu
 set wildoptions+=pum
-set wildignore+=*.o,*.so,*/node_modules/*
+set wildignore+=*.o,*.so,.DS_Store,*/.git/*,*/node_modules/*
 set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
 
 let g:netrw_banner=0
@@ -167,25 +167,20 @@ function! NoxComment()
 endfunction
 
 " H and L for moving to the start or end of a line
-nnoremap ^ H
-nnoremap $ L
-nnoremap H ^
-nnoremap L $
-
-xnoremap ^ H
-xnoremap $ L
-xnoremap H ^
-xnoremap L $
+noremap ^ H
+noremap $ L
+noremap H ^
+noremap L $
 
 " s and S to seek forwards and backwards in a line
-nnoremap <silent> s :call NoxSeek()<CR>
-nnoremap <silent> S :call NoxSeekBack()<CR>
-nnoremap <silent> ; :call NoxSeekNext()<CR>
-nnoremap <silent> , :call NoxSeekPrevious()<CR>
-nnoremap <silent> f :call NoxSeekClear()<CR>f
-nnoremap <silent> F :call NoxSeekClear()<CR>F
-nnoremap <silent> t :call NoxSeekClear()<CR>t
-nnoremap <silent> T :call NoxSeekClear()<CR>T
+noremap <silent> s :call NoxSeek()<CR>
+noremap <silent> S :call NoxSeekBack()<CR>
+noremap <silent> ; :call NoxSeekNext()<CR>
+noremap <silent> , :call NoxSeekPrevious()<CR>
+noremap <silent> f :call NoxSeekClear()<CR>f
+noremap <silent> F :call NoxSeekClear()<CR>F
+noremap <silent> t :call NoxSeekClear()<CR>t
+noremap <silent> T :call NoxSeekClear()<CR>T
 
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
@@ -193,12 +188,20 @@ nnoremap <silent> <expr> <CR> NoxEnter()
 nnoremap <BS> {
 xnoremap <CR> }
 xnoremap <BS> {
-
-" Tab for buffer switching
-nnoremap <silent> <Tab> <C-^>
+snoremap <CR> }
+snoremap <BS> {
+onoremap <CR> }
+onoremap <BS> {
 
 " Y for yanking to end of line
-nnoremap Y y$
+noremap Y y$
+
+" Tab for buffer switching
+nnoremap <silent> <Tab> :bn<CR>
+nnoremap <silent> <S-Tab> :bp<CR>
+
+" Leader + b for listing and switching buffers
+nnoremap <Leader>b :buffers<CR>:b<Space>
 
 " Leader + e for exploring files
 nnoremap <Leader>e :Explore<CR>
