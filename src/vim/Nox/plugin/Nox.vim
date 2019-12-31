@@ -134,11 +134,11 @@ function! NoxSeekPrevious()
 	return ""
 endfunction
 
-function! NoxSeekClear(cmd)
+function! NoxSeekClear(char)
 	" Clear the seek search.
 	let g:NoxSeekSearch = []
 
-	return a:cmd
+	return a:char
 endfunction
 
 function! NoxSkip(char)
