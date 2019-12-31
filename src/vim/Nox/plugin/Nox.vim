@@ -126,9 +126,11 @@ function! NoxSeekPrevious()
 	endif
 endfunction
 
-function! NoxSeekClear()
+function! NoxSeekClear(char)
 	" Clear the seek search.
 	let g:NoxSeekSearch = []
+
+	return a:char
 endfunction
 
 function! NoxSkip(char)
@@ -177,10 +179,10 @@ noremap <silent> s :call NoxSeek()<CR>
 noremap <silent> S :call NoxSeekBack()<CR>
 noremap <silent> ; :call NoxSeekNext()<CR>
 noremap <silent> , :call NoxSeekPrevious()<CR>
-noremap <silent> f :call NoxSeekClear()<CR>f
-noremap <silent> F :call NoxSeekClear()<CR>F
-noremap <silent> t :call NoxSeekClear()<CR>t
-noremap <silent> T :call NoxSeekClear()<CR>T
+noremap <silent> <expr> f NoxSeekClear("f")
+noremap <silent> <expr> F NoxSeekClear("F")
+noremap <silent> <expr> t NoxSeekClear("t")
+noremap <silent> <expr> T NoxSeekClear("T")
 
 " Enter for moving forward a paragraph or clearing search
 " Backspace for moving back a paragraph
