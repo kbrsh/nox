@@ -5,49 +5,49 @@ function nox-theme
 			if test $NOX_THEME != "light"
 				set -g NOX_THEME "light"
 				echo -e "\033]50;SetProfile=nox-light\a"
-				set fish_color_normal "3a6478" # Black
-				set fish_color_command "836383" # Magenta
-				set fish_color_quote "6d8363" # Green
-				set fish_color_redirection "3a6478" # Black
-				set fish_color_end "3a6478" # Black
-				set fish_color_error "9b4b4b" # Red
-				set fish_color_param "4b809b" # Blue
-				set fish_color_comment "a5b4bb" # Light Gray
-				set fish_color_match "3a6478" # Black
-				set fish_color_selection --background="a5b4bb" # Light Gray
-				set fish_color_search_match --background="a5b4bb" # Light Gray
-				set fish_color_operator "3a6478" # Black
-				set fish_color_escape "9b654b" # Orange
-				set fish_color_autosuggestion "a5b4bb" # Light Gray
-				set fish_color_cancel "9b4b4b" # Red
-				set fish_pager_color_prefix "3a6478" --bold --underline # Black
-				set fish_pager_color_completion "3a6478" --bold # Black
-				set fish_pager_color_description "9b8e4b" # Yellow
-				set fish_pager_color_progress "4b9b8e" # Cyan
+				set fish_color_normal "5e707d" # Shade 4
+				set fish_color_command "916496" # Magenta
+				set fish_color_quote "729664" # Green
+				set fish_color_redirection "5e707d" # Shade 4
+				set fish_color_end "5e707d" # Shade 4
+				set fish_color_error "a15959" # Red
+				set fish_color_param "5183a9" # Blue
+				set fish_color_comment "8293a1" # Shade 3
+				set fish_color_match "5e707d" # Shade 4
+				set fish_color_selection --background="d6dce0" # Shade 1
+				set fish_color_search_match --background="d6dce0" # Shade 1
+				set fish_color_operator "5e707d" # Shade 4
+				set fish_color_escape "a17359" # Orange
+				set fish_color_autosuggestion "d6dce0" # Shade 1
+				set fish_color_cancel "a15959" # Red
+				set fish_pager_color_prefix "5e707d" --bold --underline # Shade 4
+				set fish_pager_color_completion "5e707d" --bold # Shade 4
+				set fish_pager_color_description "a19659" # Yellow
+				set fish_pager_color_progress "59a182" # Cyan
 			end
 		else
 			if test $NOX_THEME != "dark"
 				set -g NOX_THEME "dark"
 				echo -e "\033]50;SetProfile=nox-dark\a"
-				set fish_color_normal "99aab2" # White
-				set fish_color_command "9c7c9c" # Magenta
-				set fish_color_quote "879c7c" # Green
-				set fish_color_redirection "99aab2" # White
-				set fish_color_end "99aab2" # White
-				set fish_color_error "b06969" # Red
-				set fish_color_param "6998b0" # Blue
-				set fish_color_comment "335261" # Gray
-				set fish_color_match "99aab2" # White
-				set fish_color_selection --background="335261" # Gray
-				set fish_color_search_match --background="335261" # Gray
-				set fish_color_operator "99aab2" # White
-				set fish_color_escape "b08069" # Orange
-				set fish_color_autosuggestion "335261" # Gray
-				set fish_color_cancel "b06969" # Red
-				set fish_pager_color_prefix "99aab2" --bold --underline # White
-				set fish_pager_color_completion "99aab2" --bold # White
-				set fish_pager_color_description "b0a469" # Yellow
-				set fish_pager_color_progress "69b0a4" # Cyan
+				set fish_color_normal "abb6bf" # Shade 4
+				set fish_color_command "8b6b8e" # Magenta
+				set fish_color_quote "758e6b" # Green
+				set fish_color_redirection "abb6bf" # Shade 4
+				set fish_color_end "abb6bf" # Shade 4
+				set fish_color_error "a15959" # Red
+				set fish_color_param "5682a4" # Blue
+				set fish_color_comment "8293a1" # Shade 3
+				set fish_color_match "abb6bf" # Shade 4
+				set fish_color_selection --background="334d61" # Shade 1
+				set fish_color_search_match --background="334d61" # Shade 1
+				set fish_color_operator "abb6bf" # Shade 4
+				set fish_color_escape "a17359" # Orange
+				set fish_color_autosuggestion "334d61" # Shade 1
+				set fish_color_cancel "a15959" # Red
+				set fish_pager_color_prefix "abb6bf" --bold --underline # Shade 4
+				set fish_pager_color_completion "abb6bf" --bold # Shade 4
+				set fish_pager_color_description "a19659" # Yellow
+				set fish_pager_color_progress "59a182" # Cyan
 			end
 		end
 	end

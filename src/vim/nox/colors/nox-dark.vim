@@ -10,105 +10,109 @@ set background=dark
 
 let g:colors_name="nox-dark"
 
-let s:black = {"gui": "#19272f", "cterm": 16}
-let s:gray = {"gui": "#335261", "cterm": 109}
-let s:lightgray = {"gui": "#718894", "cterm": 109}
-let s:white = {"gui": "#99aab2", "cterm": 109}
-let s:red = {"gui": "#b06969", "cterm": 210}
-let s:orange = {"gui": "#b08069", "cterm": 180}
-let s:yellow = {"gui": "#b0a469", "cterm": 186}
-let s:green = {"gui": "#879c7c", "cterm": 150}
-let s:cyan = {"gui": "#69b0a4", "cterm": 116}
-let s:blue = {"gui": "#6998b0", "cterm": 111}
-let s:purple = {"gui": "#9c7c9c", "cterm": 176}
+let s:shade0 = {"gui": "#19252f", "cterm": 109}
+let s:shade1 = {"gui": "#334d61", "cterm": 109}
+let s:shade2 = {"gui": "#5e707d", "cterm": 16}
+let s:shade3 = {"gui": "#8293a1", "cterm": 109}
+let s:shade4 = {"gui": "#abb6bf", "cterm": 109}
+let s:shade5 = {"gui": "#d6dce0", "cterm": 109}
+let s:shade6 = {"gui": "#f9fafb", "cterm": 16}
+let s:red = {"gui": "#a15959", "cterm": 210}
+let s:orange = {"gui": "#a17359", "cterm": 180}
+let s:yellow = {"gui": "#a19659", "cterm": 186}
+let s:green = {"gui": "#758e6b", "cterm": 150}
+let s:cyan = {"gui": "#59a182", "cterm": 116}
+let s:blue = {"gui": "#5682a4", "cterm": 111}
+let s:purple = {"gui": "#8b6b8e", "cterm": 176}
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")
 	exec "hi " . a:type . " cterm=" . l:style . " ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=" . l:style . " guibg=" . a:bg.gui . " guifg=" . a:fg.gui
 endfunction
 
-call s:h("User1", s:black, s:lightgray)
-call s:h("User2", s:black, s:gray)
-call s:h("User3", s:lightgray, s:black)
+call s:h("User1", s:shade0, s:shade4)
+call s:h("User2", s:shade6, s:shade2)
+call s:h("User3", s:shade4, s:shade0)
 
-call s:h("Cursor", s:black, s:white)
-call s:h("iCursor", s:white, s:black)
-call s:h("CursorLine", s:black, s:lightgray)
-call s:h("Directory", s:blue, s:black)
-call s:h("IncSearch", s:black, s:yellow)
-call s:h("LineNr", s:gray, s:black)
-call s:h("NonText", s:gray, s:black)
-call s:h("MatchParen", s:white, s:black, "underline")
-call s:h("Pmenu", s:black, s:gray)
-call s:h("PmenuSel", s:black, s:white)
-call s:h("PmenuSbar", s:black, s:black)
-call s:h("PmenuThumb", s:white, s:white)
-call s:h("Substitute", s:black, s:yellow)
-call s:h("Search", s:black, s:yellow)
-call s:h("VertSplit", s:white, s:black)
-call s:h("Visual", s:black, s:white)
-call s:h("WildMenu", s:black, s:yellow)
+call s:h("Cursor", s:shade0, s:shade6)
+call s:h("iCursor", s:shade6, s:shade0)
+call s:h("CursorLine", s:shade4, s:shade1)
+call s:h("Directory", s:blue, s:shade0)
+call s:h("IncSearch", s:shade0, s:yellow)
+call s:h("LineNr", s:shade2, s:shade0)
+call s:h("NonText", s:shade2, s:shade0)
+call s:h("MatchParen", s:shade4, s:shade0, "underline")
+call s:h("Pmenu", s:shade4, s:shade1)
+call s:h("PmenuSel", s:shade0, s:shade4)
+call s:h("PmenuSbar", s:shade0, s:shade0)
+call s:h("PmenuThumb", s:shade4, s:shade4)
+call s:h("Substitute", s:shade0, s:yellow)
+call s:h("Search", s:shade0, s:yellow)
+call s:h("VertSplit", s:shade4, s:shade0)
+call s:h("Visual", s:shade4, s:shade1)
+call s:h("WildMenu", s:shade0, s:yellow)
 
-call s:h("Normal", s:white, s:black)
-call s:h("Identifier", s:white, s:black)
-call s:h("Function", s:blue, s:black)
+call s:h("Normal", s:shade4, s:shade0)
+call s:h("Identifier", s:shade4, s:shade0)
+call s:h("Function", s:blue, s:shade0)
 
-call s:h("Comment", s:gray, s:black)
+call s:h("Comment", s:shade3, s:shade0)
 
-call s:h("Constant", s:orange, s:black)
-call s:h("String", s:green, s:black)
-call s:h("Character", s:green, s:black)
-call s:h("Number", s:orange, s:black)
-call s:h("Boolean", s:orange, s:black)
-call s:h("Float", s:orange, s:black)
+call s:h("Constant", s:orange, s:shade0)
+call s:h("String", s:green, s:shade0)
+call s:h("Character", s:green, s:shade0)
+call s:h("Number", s:orange, s:shade0)
+call s:h("Boolean", s:orange, s:shade0)
+call s:h("Float", s:orange, s:shade0)
 
-call s:h("Statement", s:purple, s:black)
-call s:h("Conditional", s:purple, s:black)
-call s:h("Repeat", s:purple, s:black)
-call s:h("Label", s:purple, s:black)
-call s:h("Operator", s:white, s:black)
-call s:h("Keyword", s:purple, s:black)
-call s:h("Exception", s:purple, s:black)
-call s:h("PreProc", s:purple, s:black)
-call s:h("Include", s:purple, s:black)
-call s:h("Define", s:purple, s:black)
-call s:h("Macro", s:purple, s:black)
-call s:h("PreCondit", s:purple, s:black)
+call s:h("Statement", s:purple, s:shade0)
+call s:h("Conditional", s:purple, s:shade0)
+call s:h("Repeat", s:purple, s:shade0)
+call s:h("Label", s:purple, s:shade0)
+call s:h("Operator", s:shade4, s:shade0)
+call s:h("Keyword", s:purple, s:shade0)
+call s:h("Exception", s:purple, s:shade0)
+call s:h("PreProc", s:purple, s:shade0)
+call s:h("Include", s:purple, s:shade0)
+call s:h("Define", s:purple, s:shade0)
+call s:h("Macro", s:purple, s:shade0)
+call s:h("PreCondit", s:purple, s:shade0)
 
-call s:h("Type", s:yellow, s:black)
-call s:h("StorageClass", s:purple, s:black)
-call s:h("Structure", s:yellow, s:black)
-call s:h("Typedef", s:yellow, s:black)
+call s:h("Type", s:yellow, s:shade0)
+call s:h("StorageClass", s:purple, s:shade0)
+call s:h("Structure", s:yellow, s:shade0)
+call s:h("Typedef", s:yellow, s:shade0)
 
-call s:h("Special", s:red, s:black)
-call s:h("SpecialChar", s:red, s:black)
-call s:h("Tag", s:red, s:black)
-call s:h("Delimiter", s:red, s:black)
-call s:h("SpecialComment", s:red, s:black)
-call s:h("Debug", s:red, s:black)
+call s:h("Special", s:red, s:shade0)
+call s:h("SpecialChar", s:red, s:shade0)
+call s:h("Tag", s:red, s:shade0)
+call s:h("Delimiter", s:red, s:shade0)
+call s:h("SpecialComment", s:red, s:shade0)
+call s:h("Debug", s:red, s:shade0)
 
-call s:h("Underlined", s:blue, s:black)
-call s:h("Error", s:white, s:red)
-call s:h("Todo", s:white, s:yellow)
+call s:h("Underlined", s:blue, s:shade0)
+call s:h("Error", s:shade4, s:red)
+call s:h("Todo", s:shade0, s:yellow)
 
 " HTML
-call s:h("htmlBold", s:white, s:black)
-call s:h("htmlBoldUnderline", s:white, s:black)
-call s:h("htmlBoldUnderlineItalic", s:white, s:black)
-call s:h("htmlUnderline", s:white, s:black)
-call s:h("htmlUnderlineItalic", s:white, s:black)
-call s:h("htmlItalic", s:white, s:black)
-call s:h("htmlTitle", s:white, s:black)
-call s:h("htmlH1", s:white, s:black)
-call s:h("htmlH2", s:white, s:black)
-call s:h("htmlH3", s:white, s:black)
-call s:h("htmlH4", s:white, s:black)
-call s:h("htmlH5", s:white, s:black)
-call s:h("htmlH6", s:white, s:black)
+call s:h("htmlBold", s:shade4, s:shade0)
+call s:h("htmlBoldUnderline", s:shade4, s:shade0)
+call s:h("htmlBoldUnderlineItalic", s:shade4, s:shade0)
+call s:h("htmlUnderline", s:shade4, s:shade0)
+call s:h("htmlUnderlineItalic", s:shade4, s:shade0)
+call s:h("htmlItalic", s:shade4, s:shade0)
+call s:h("htmlTitle", s:shade4, s:shade0)
+call s:h("htmlH1", s:shade4, s:shade0)
+call s:h("htmlH2", s:shade4, s:shade0)
+call s:h("htmlH3", s:shade4, s:shade0)
+call s:h("htmlH4", s:shade4, s:shade0)
+call s:h("htmlH5", s:shade4, s:shade0)
+call s:h("htmlH6", s:shade4, s:shade0)
 
 " JS
-call s:h("jsArrowFunction", s:purple, s:black)
-call s:h("jsFunction", s:purple, s:black)
-call s:h("jsFuncName", s:blue, s:black)
-call s:h("jsFuncCall", s:blue, s:black)
-call s:h("jsUndefined", s:orange, s:black)
+call s:h("jsArrowFunction", s:purple, s:shade0)
+call s:h("jsFunction", s:purple, s:shade0)
+call s:h("jsOperatorKeyword", s:purple, s:shade0)
+call s:h("jsFuncName", s:blue, s:shade0)
+call s:h("jsFuncCall", s:blue, s:shade0)
+call s:h("jsUndefined", s:orange, s:shade0)
