@@ -1,5 +1,3 @@
-let g:NoxUser = "user"
-
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'kbrsh/nox', {'rtp': 'src/vim/nox/'}
 call plug#end()
