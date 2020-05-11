@@ -1,4 +1,5 @@
 function fish_prompt
+	nox-theme
 	set_color cyan
 	echo -n "
 $NOX_USER "
