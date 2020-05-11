@@ -33,10 +33,6 @@ set statusline+=%3*\ %y " File type
 set statusline+=\ %2*\ %{NoxStatusCurrentBranch()} " Branch
 set statusline+=\ %1*\ %l:%L\ " Position
 
-hi User1 guifg=#19272f guibg=#718894
-hi User2 guifg=#19272f guibg=#335261
-hi User3 guifg=#718894 guibg=#19272f
-
 " Key Maps
 
 let mapleader = "\<Space>"

@@ -8,7 +8,7 @@ hi clear
 syntax reset
 set background=dark
 
-let g:colors_name="Nox"
+let g:colors_name="nox-dark"
 
 let s:black = {"gui": "#19272f", "cterm": 16}
 let s:gray = {"gui": "#335261", "cterm": 109}
@@ -26,6 +26,10 @@ function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")
 	exec "hi " . a:type . " cterm=" . l:style . " ctermbg=" . a:bg.cterm . " ctermfg=" . a:fg.cterm . " gui=" . l:style . " guibg=" . a:bg.gui . " guifg=" . a:fg.gui
 endfunction
+
+call s:h("User1", s:black, s:lightgray)
+call s:h("User2", s:black, s:gray)
+call s:h("User3", s:lightgray, s:black)
 
 call s:h("Cursor", s:black, s:white)
 call s:h("iCursor", s:white, s:black)
