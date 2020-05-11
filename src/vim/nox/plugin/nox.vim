@@ -25,7 +25,7 @@ function! NoxStatusCurrentBranch()
 endfunction
 
 set laststatus=2
-set statusline=%1*\ $NOX_USER " Name
+set statusline=%1*\ %{g:NoxUser} " Name
 set statusline+=\ %2*\ %{NoxStatusCurrentMode()} " Mode
 set statusline+=\ %3*\ %t " File
 set statusline+=%=
