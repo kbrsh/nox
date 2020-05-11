@@ -3,7 +3,7 @@ function fish_prompt
 	begin
 		set NOX_THEME "light"
 		set -l hour (date +"%H")
-		if test $hour -gt 7; or test $hour -lt 19
+		if test $hour -gt 7; and test $hour -lt 19
 			if test $NOX_THEME = "dark"
 				set NOX_THEME "light"
 				echo -e "\033]50;SetProfile=nox-light\a"
