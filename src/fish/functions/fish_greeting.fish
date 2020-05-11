@@ -1,4 +1,7 @@
 function fish_greeting
+	set -g NOX_THEME ""
+	nox-theme
+
 	set_color magenta
 	echo -n "~~~~~~~"
 
