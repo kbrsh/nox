@@ -1,6 +1,6 @@
 # Nox
 
-Beautiful dark-themed color scheme.
+Elegant color scheme and Vim configuration.
 
 ![Nox](https://github.com/kbrsh/nox/raw/master/img/Nox.png)
 
