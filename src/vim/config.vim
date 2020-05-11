@@ -1,5 +1,5 @@
 call plug#begin("~/.local/share/nvim/plugged")
-Plug "kbrsh/nox", {"rtp": "src/vim/nox/"}
+Plug 'kbrsh/nox', {'rtp': 'src/vim/nox/'}
 call plug#end()
 
 let s:hour = strftime("%H")
