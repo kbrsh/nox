@@ -17,13 +17,13 @@ let s:shade3 = {"gui": "#8293a1", "cterm": 109}
 let s:shade4 = {"gui": "#abb6bf", "cterm": 109}
 let s:shade5 = {"gui": "#d6dce0", "cterm": 109}
 let s:shade6 = {"gui": "#f9fafb", "cterm": 16}
-let s:red = {"gui": "#a15959", "cterm": 210}
-let s:orange = {"gui": "#a17359", "cterm": 180}
-let s:yellow = {"gui": "#a19659", "cterm": 186}
-let s:green = {"gui": "#758e6b", "cterm": 150}
-let s:cyan = {"gui": "#59a182", "cterm": 116}
-let s:blue = {"gui": "#5682a4", "cterm": 111}
-let s:purple = {"gui": "#8b6b8e", "cterm": 176}
+let s:red = {"gui": "#ae6b6b", "cterm": 210}
+let s:orange = {"gui": "#ae836b", "cterm": 180}
+let s:yellow = {"gui": "#aea46b", "cterm": 186}
+let s:green = {"gui": "#859c7c", "cterm": 150}
+let s:cyan = {"gui": "#6bae91", "cterm": 116}
+let s:blue = {"gui": "#6991b0", "cterm": 111}
+let s:purple = {"gui": "#997c9c", "cterm": 176}
 
 function! s:h(type, fg, bg, ...)
 	let l:style = get(a:, 1, "none")

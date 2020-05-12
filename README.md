@@ -30,13 +30,13 @@ Nox has a fish configuration that displays the current working directory and git
 	* `HSL(206, 14%, 98%)` - `#f9fafb`
 * Accents
 	* Dark
-		* Red - `HSL(0, 29%, 49%)` - `#a15959`
-		* Orange - `HSL(22, 29%, 49%)` - `#a17359`
-		* Yellow - `HSL(51, 29%, 49%)` - `#a19659`
-		* Green - `HSL(103, 14%, 49%)` - `#758e6b`
-		* Cyan - `HSL(154, 29%, 49%)` - `#59a182`
-		* Blue - `HSL(206, 31%, 49%)` - `#5682a4`
-		* Purple - `HSL(294, 14%, 49%)` - `#8b6b8e`
+		* Red - `HSL(0, 29%, 55%)` - `#ae6b6b`
+		* Orange - `HSL(22, 29%, 55%)` - `#ae836b`
+		* Yellow - `HSL(51, 29%, 55%)` - `#aea46b`
+		* Green - `HSL(103, 14%, 55%)` - `#859c7c`
+		* Cyan - `HSL(154, 29%, 55%)` - `#6bae91`
+		* Blue - `HSL(206, 31%, 55%)` - `#6991b0`
+		* Purple - `HSL(294, 14%, 55%)` - `#997c9c`
 	* Light
 		* Red - `HSL(0, 29%, 49%)` - `#a15959`
 		* Orange - `HSL(22, 29%, 49%)` - `#a17359`
