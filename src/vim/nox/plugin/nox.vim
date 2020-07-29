@@ -208,7 +208,7 @@ nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <Leader>e :Explore<CR>
 
 " Leader + f for searching files
-nnoremap <Leader>f :Files<Space>
+nnoremap <Leader>f :Files<CR>
 
 " Leader + / for commenting lines
 nnoremap <silent> <Leader>/ :call NoxComment()<CR>
