@@ -118,4 +118,4 @@ call s:h("jsFuncCall", s:blue, s:shade0)
 call s:h("jsUndefined", s:orange, s:shade0)
 
 " Finder
-let $FZF_DEFAULT_OPTS="--layout=reverse --no-multi --bind tab:down --bind btab:up --margin=1,3 --color 'gutter:" . s:shade0.gui . "' --color 'pointer:" . s:shade2.gui . "' --color 'hl:" . s:green.gui . "' --color 'hl+:" . s:green.gui . "' --color 'bg+:" . s:shade1.gui . "'"
+let $FZF_DEFAULT_OPTS="--layout=reverse --no-multi --bind tab:down --bind btab:up --margin=1,3 --color 'gutter:" . s:shade0.gui . "' --color 'pointer:" . s:shade2.gui . "' --color 'hl:" . s:green.gui . "' --color 'hl+:" . s:green.gui . "' --color 'fg+:" . s:shade4.gui . "' --color 'bg+:" . s:shade1.gui . "'"
