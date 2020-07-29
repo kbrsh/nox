@@ -10,9 +10,15 @@ set wildoptions+=pum
 set wildignore+=*.o,*.so,.DS_Store,*/.git/*,*/node_modules/*
 set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
 
+filetype plugin indent on
+
+" Explorer
+
 let g:netrw_banner=0
 
-filetype plugin indent on
+" Finder
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
 
 " Status Line
 
@@ -198,21 +204,19 @@ noremap Y y$
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
-" Leader + b for listing and switching buffers
-nnoremap <Leader>b :buffers<CR>:b<Space>
-
 " Leader + e for exploring files
 nnoremap <Leader>e :Explore<CR>
 
 " Leader + f for searching files
-nnoremap <Leader>f :find<Space>
+nnoremap <Leader>f :Files<Space>
 
 " Leader + / for commenting lines
 nnoremap <silent> <Leader>/ :call NoxComment()<CR>
 xnoremap <silent> <Leader>/ :call NoxComment()<CR>
 
-" jk for exiting insert mode
+" jk for exiting insert and terminal mode
 inoremap jk <Esc>
+tnoremap jk <Esc>
 
 " Tab completion
 inoremap <expr> <Tab> NoxTab()

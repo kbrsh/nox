@@ -116,3 +116,6 @@ call s:h("jsOperatorKeyword", s:purple, s:shade0)
 call s:h("jsFuncName", s:blue, s:shade0)
 call s:h("jsFuncCall", s:blue, s:shade0)
 call s:h("jsUndefined", s:orange, s:shade0)
+
+" Finder
+let $FZF_DEFAULT_OPTS="--pointer='' --layout=reverse --no-multi --bind tab:down --bind btab:up --margin=1,3 --color border:" . s:shade0.gui . " --color gutter:" . s:shade0.gui . " --color hl:" . s:green.gui . " --color hl+:" . s:green.gui . " --color bg+:" . s:shade1.gui
