@@ -18,7 +18,7 @@ let g:netrw_banner=0
 
 " Finder
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
 
 " Status Line
 
