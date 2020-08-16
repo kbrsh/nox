@@ -234,7 +234,13 @@ inoremap " ""<Left>
 inoremap ' ''<Left>
 
 " Remove trailing whitespace on write
-autocmd BufWritePre * :%s/\s\+$//ge
+augroup NoxRemoveTrailingWhitespace
+	autocmd!
+	autocmd BufWritePre * :%s/\s\+$//ge
+augroup END
 
 " Override default spacing for specific languages
-autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
+augroup NoxDefaultSpacing
+	autocmd!
+	autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
+augroup END
