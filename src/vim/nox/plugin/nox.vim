@@ -8,7 +8,7 @@ set path+=**
 set wildmenu
 set wildoptions+=pum
 set wildignore+=*.o,*.so,.DS_Store,*/.git/*,*/node_modules/*
-set noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
+set expandtab tabstop=3 shiftwidth=3
 
 filetype plugin indent on
 
@@ -171,6 +171,33 @@ function! NoxComment()
 	endif
 endfunction
 
+function! NoxFormat()
+	" Format a file
+	let w = winsaveview()
+	normal! gggqG
+	call winrestview(w)
+endfunction
+
+lua << EOF
+local nvim_lsp = require("lspconfig")
+
+local on_attach = function(client, bufnr)
+	local opts = { noremap=true, silent=true }
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+end
+
+local servers = { "tsserver" }
+for _, lsp in ipairs(servers) do
+	nvim_lsp[lsp].setup { on_attach = on_attach }
+end
+EOF
+
 " H and L for moving to the start or end of a line
 noremap ^ H
 noremap $ L
@@ -215,6 +242,9 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <silent> <Leader>/ :call NoxComment()<CR>
 xnoremap <silent> <Leader>/ :call NoxComment()<CR>
 
+" Leader + p for formatting files
+nnoremap <silent> <Leader>p :call NoxFormat()<CR><CR>
+
 " jk for exiting insert and terminal mode
 inoremap jk <Esc>
 tnoremap jk <Esc>
@@ -243,4 +273,10 @@ augroup END
 augroup NoxDefaultSpacing
 	autocmd!
 	autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
+augroup END
+
+" Formatting programs
+augroup NoxFormatProgram
+	autocmd!
+	autocmd FileType javascript,javascriptreact setlocal formatprg=prettier\ --parser\ babel\ --no-semi\ --tab-width\ 3
 augroup END

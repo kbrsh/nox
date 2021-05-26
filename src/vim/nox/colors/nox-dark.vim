@@ -51,6 +51,7 @@ call s:h("Search", s:shade0, s:yellow)
 call s:h("VertSplit", s:shade4, s:shade0)
 call s:h("Visual", s:shade4, s:shade1)
 call s:h("WildMenu", s:shade0, s:yellow)
+call s:h("SignColumn", s:shade0, s:shade0)
 
 call s:h("Normal", s:shade4, s:shade0)
 call s:h("Identifier", s:shade4, s:shade0)
