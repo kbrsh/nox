@@ -269,14 +269,10 @@ augroup NoxRemoveTrailingWhitespace
 	autocmd BufWritePre * :%s/\s\+$//ge
 augroup END
 
-" Override default spacing for specific languages
-augroup NoxDefaultSpacing
-	autocmd!
-	autocmd FileType python setlocal noexpandtab tabstop=3 softtabstop=3 shiftwidth=3
-augroup END
-
 " Formatting programs
 augroup NoxFormatProgram
 	autocmd!
+	autocmd FileType html setlocal formatprg=prettier\ --parser\ html\ --tab-width\ 3
+	autocmd FileType css setlocal formatprg=prettier\ --parser\ css\ --tab-width\ 3
 	autocmd FileType javascript,javascriptreact setlocal formatprg=prettier\ --parser\ babel\ --no-semi\ --tab-width\ 3
 augroup END
