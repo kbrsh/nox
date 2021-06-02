@@ -148,8 +148,8 @@ endfunction
 function! NoxTab()
 	" Tab for indentation if at the beginning of a line, or else provide
 	" auto-completion.
-	let l:col = col(".") - 2
-	if l:col == -1 || getline(".")[l:col] == "\t"
+	let l:col = getline(".")[0:col(".")]
+	if matchstr(l:col, "\\s*") == l:col
 		return "\<Tab>"
 	else
 		return "\<C-N>"
