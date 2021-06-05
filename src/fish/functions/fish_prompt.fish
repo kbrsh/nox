@@ -2,12 +2,17 @@ function fish_prompt
 	nox-theme
 	set_color cyan
 	echo -n "
-$NOX_USER "
+$NOX_USER"
 
+   set_color normal
+   echo -n "@"
 	set_color blue
 	echo -n (prompt_pwd)
 
 	if test -d .git
+      set_color normal
+      echo -n "➜"
+
 		if git status --porcelain | grep "^[ MADRCU?!][MADRCU?!]" > /dev/null
 			# Check for any modified files in the working area.
 			set_color red
@@ -19,7 +24,7 @@ $NOX_USER "
 			set_color green
 		end
 
-		echo -n " "(git symbolic-ref --short HEAD)
+		echo -n (git symbolic-ref --short HEAD)
 	end
 
 	switch $fish_bind_mode
@@ -30,6 +35,5 @@ $NOX_USER "
 		case visual
 			set_color yellow
 	end
-	echo -n "
-➜ "
+	echo -n " ❯ "
 end
