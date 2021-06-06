@@ -4,7 +4,7 @@ function nox-theme
 		if test $hour -gt 7; and test $hour -lt 19
 			if test $NOX_THEME != "light"
 				set -g NOX_THEME "light"
-				echo -e "\033]50;SetProfile=nox-light\a"
+				echo -en "\033]50;SetProfile=nox-light\a"
 				set fish_color_normal "5e707d" # Shade 4
 				set fish_color_command "916496" # Magenta
 				set fish_color_quote "729664" # Green
@@ -28,7 +28,7 @@ function nox-theme
 		else
 			if test $NOX_THEME != "dark"
 				set -g NOX_THEME "dark"
-				echo -e "\033]50;SetProfile=nox-dark\a"
+				echo -en "\033]50;SetProfile=nox-dark\a"
 				set fish_color_normal "abb6bf" # Shade 4
 				set fish_color_command "997c9c" # Magenta
 				set fish_color_quote "859c7c" # Green
