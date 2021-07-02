@@ -232,6 +232,9 @@ noremap Y y$
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
+" Leader + w for writing files
+nnoremap <Leader>w :w<CR>
+
 " Leader + e for exploring files
 nnoremap <Leader>e :Explore<CR>
 
