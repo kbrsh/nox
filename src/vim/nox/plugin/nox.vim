@@ -28,17 +28,23 @@ function! NoxStatusCurrentMode()
 endfunction
 
 function! NoxStatusCurrentBranch()
-	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+   let l:branch = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+
+   if matchstr(l:branch, "\_s*") == l:branch
+      return ""
+   else
+      return "➜" . l:branch
+   endif
+endfunction
+
+function! NoxStatusBuffers()
+   return join(map(copy(getbufinfo({'buflisted': 1})), "(v:val.bufnr == bufnr('%') ? '%3*' : '%4*') . fnamemodify(v:val.name, ':t') . '%4*'"), " ")
 endfunction
 
 set laststatus=2
-set statusline=%1*\ user " Name
-set statusline+=\ %2*\ %{NoxStatusCurrentMode()} " Mode
-set statusline+=\ %3*\ %t " File
-set statusline+=%=
-set statusline+=%3*\ %y " File type
-set statusline+=\ %2*\ %{NoxStatusCurrentBranch()} " Branch
-set statusline+=\ %1*\ %l:%L\ " Position
+set statusline=%1*\ %{fnamemodify(getcwd(),':t')}%{NoxStatusCurrentBranch()}\ %4* " directory➜branch
+set statusline+=%2*\ %{NoxStatusCurrentMode()}\ %4* " mode
+set statusline+=\ %{%NoxStatusBuffers()%} " buffers
 
 " Key Maps
 

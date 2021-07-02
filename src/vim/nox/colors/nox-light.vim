@@ -33,6 +33,7 @@ endfunction
 call s:h("User1", s:shade0, s:shade4)
 call s:h("User2", s:shade6, s:shade2)
 call s:h("User3", s:shade4, s:shade0)
+call s:h("User4", s:shade3, s:shade0)
 
 call s:h("Cursor", s:shade0, s:shade6)
 call s:h("iCursor", s:shade6, s:shade0)
