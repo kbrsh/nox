@@ -1,7 +1,6 @@
 " General
 
 set autoread
-set number
 set hidden
 set inccommand=nosplit
 set path+=**
