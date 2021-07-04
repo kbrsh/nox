@@ -2,6 +2,7 @@
 
 set autoread
 set hidden
+set mouse=a
 set inccommand=nosplit
 set path+=**
 set wildmenu
