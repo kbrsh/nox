@@ -8,6 +8,7 @@ set path+=**
 set wildmenu
 set wildoptions+=pum
 set wildignore+=*.o,*.so,.DS_Store,*/.git/*,*/node_modules/*
+set completeopt=menuone,noselect
 set expandtab tabstop=3 shiftwidth=3
 
 filetype plugin indent on
@@ -157,10 +158,12 @@ function! NoxTab()
 	" Tab for indentation if at the beginning of a line, or else provide
 	" auto-completion.
 	let l:col = getline(".")[0:col(".")]
-	if matchstr(l:col, "\\s*") == l:col
+   if pumvisible()
+		return "\<C-N>"
+   elseif matchstr(l:col, "\\s*") == l:col
 		return "\<Tab>"
 	else
-		return "\<C-N>"
+      return compe#complete()
 	endif
 endfunction
 
@@ -192,7 +195,6 @@ local nvim_lsp = require("lspconfig")
 local on_attach = function(client, bufnr)
 	local opts = { noremap=true, silent=true }
 
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -204,6 +206,35 @@ local servers = { "tsserver" }
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+require"compe".setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = "enable";
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = {
+    border = { "", "", "", " ", "", "", "", " " },
+    winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+    max_width = 120,
+    min_width = 60,
+    max_height = math.floor(vim.o.lines * 0.3),
+    min_height = 1,
+  };
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+  };
+}
 EOF
 
 " H and L for moving to the start or end of a line
