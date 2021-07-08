@@ -142,11 +142,13 @@ function! NoxSeekClear(char)
 	return a:char
 endfunction
 
-function! NoxSkip(char)
+function! NoxSkip(char, same)
 	" Skip a character if it is already the next one.
 	if getline(".")[col(".") - 1] == a:char
 		return "\<Right>"
-	else
+	elseif a:same
+      return a:char . a:char . "\<Left>"
+   else
 		return a:char
 	endif
 endfunction
@@ -189,8 +191,8 @@ local nvim_lsp = require("lspconfig")
 
 local on_attach = function(client, bufnr)
 	local opts = { noremap=true, silent=true }
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<Cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -264,13 +266,13 @@ inoremap <S-Tab> <C-P>
 
 " Completion and skipping for grouping symbols
 inoremap ( ()<Left>
-inoremap <expr> ) NoxSkip(")")
+inoremap <expr> ) NoxSkip(")", 0)
 inoremap [ []<Left>
-inoremap <expr> ] NoxSkip("]")
+inoremap <expr> ] NoxSkip("]", 0)
 inoremap { {}<Left>
-inoremap <expr> } NoxSkip("}")
-inoremap " ""<Left>
-inoremap ' ''<Left>
+inoremap <expr> } NoxSkip("}", 0)
+inoremap <expr> " NoxSkip("\"", 1)
+inoremap <expr> ' NoxSkip("'", 1)
 
 " Remove trailing whitespace on write
 augroup NoxRemoveTrailingWhitespace
